@@ -1,0 +1,15 @@
+[
+    {
+      "title": "Dúo Serendipia",
+      "description": "Página web del Dúo Serendipia, donde reflejamos nuestra esencia artística y profesional.",
+      "image": "/assets/duo-serendipia.jpg",
+      "link": "https://duoserendipia.com.ar"
+    },
+    {
+      "title": "La Troupe",
+      "description": "Sitio web de La Troupe, una compañía de artistas con una visión única y creativa.",
+      "image": "/assets/la-troupe.jpg",
+      "link": "https://latroupecirco.com.ar"
+    }
+  ]
+  

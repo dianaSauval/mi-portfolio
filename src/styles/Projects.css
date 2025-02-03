@@ -1,0 +1,64 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1e1f26, #7e1dc3, #e6399b);
+    color: white;
+  }
+  
+  /* Grid de las tarjetas */
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  /* Tarjetas de los proyectos */
+  .project-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.8);
+  }
+  
+  /* Imagen de cada proyecto */
+  .project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* Botón de ver proyecto */
+  .cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+    margin-top: 15px;
+  }
+  
+  .cta-button:hover {
+    background: linear-gradient(135deg, #ee0979, #ff6a00);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.8);
+  }
+  
