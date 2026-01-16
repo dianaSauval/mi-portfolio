@@ -1,0 +1,33 @@
+@import "./variables.css";
+
+html, body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  line-height: var(--lh-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-h2);
+}
+
+p, li, span {
+  font-family: var(--font-body);
+  font-weight: var(--fw-body);
+}
+
+button, .cta-button, a.button-like, input, select, textarea {
+  font-family: var(--font-ui);
+}

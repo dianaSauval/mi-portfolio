@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "language": "Language"
+  },
+  "lang": {
+    "es": "Spanish",
+    "en": "English"
+  },
+  "home": {
+    "titleLine1": "Full-Stack Developer",
+    "titleLine2": "Web Platforms",
+    "subtitle": "Web platforms, real projects, human focus",
+    "text": "I design and develop complete web platforms, from frontend to backend, with a focus on clarity, structure, and real user experience. I work on projects involving admin panels, content management, and payment systems, taking care of both the technical side and the human aspect behind each product.",
+    "cta": "View Projects",
+    "imageAlt": "Diana Sauval"
+  },
+  "about": {
+    "title": "About me",
+    "p1": "I’m a Full-Stack web developer creating complete websites and platforms for real-world projects.",
+    "p2": "I design and build clear, functional, and easy-to-use digital products, supporting each client from the initial idea to launch.",
+    "p3": "I focus on building solid, well-structured solutions designed to grow, taking care of both internal functionality and user experience.",
+    "techTitle": "Tech stack",
+    "tech1": "I work across the full stack using React and Vite on the frontend, and Node.js, Express, and MongoDB on the backend.",
+    "tech2": "I develop admin panels, authentication systems, content management features, and platforms with online payments.",
+    "tech3": "I integrate services such as Cloudinary and Vimeo for file handling, and payment gateways like Mercado Pago, PayPal, and Stripe.",
+    "tech4": "I completed the IBM Cybersecurity Analyst program and earned its credentials, applying security best practices in the projects I develop.",
+    "chips": {
+      "payments": "Payments",
+      "cybersecurity": "Cybersecurity"
+    },
+    "cta": "Let’s talk"
+  },
+  "projects": {
+    "title": "My Projects",
+    "viewProject": "View Project",
+    "tools": "Tools",
+    "highlights": "What I did",
+    "code": "Code",
+    "codeFrontend": "Code (Frontend)",
+    "codeBackend": "Code (Backend)",
+    "expand": "Expand",
+    "collapse": "Collapse"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Fill out the form and you’ll receive a reply by email shortly.",
+
+    "infoTitle": "Info",
+    "responseTimeLabel": "Response time",
+    "responseTimeText": "Usually within 24–48 hours.",
+    "speedUpLabel": "To speed things up",
+    "speedUpText": "Share your goal, timeline/deadline, and any relevant details.",
+    "socialLabel": "Social",
+
+    "note": "To help you better, tell me your website goal, which sections you need, any visual references, and the timeframe you’d like to work with.",
+
+    "formTitle": "Send a message",
+
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+
+    "reasonLabel": "Reason",
+    "reasons": {
+      "webProject": "Website project",
+      "budget": "Budget",
+      "collaboration": "Collaboration",
+      "other": "Other"
+    },
+
+    "messageLabel": "Message",
+    "messagePlaceholder": "Briefly describe your request and the most important details.",
+
+    "sending": "Sending...",
+    "send": "Send message",
+
+    "privacyHint": "Your information is used only to reply to your message.",
+
+    "successTitle": "Message sent successfully",
+    "successText": "Thanks for reaching out. Your message was sent and I’ll reply to the email you provided.",
+    "backHome": "Back to home",
+    "sendAnother": "Send another message",
+
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Please enter a valid email.",
+      "reason": "Please select a reason.",
+      "message": "Your message must be at least 10 characters.",
+      "missingEmailjs": "EmailJS is not configured (check your .env variables).",
+      "sendFailed": "The message could not be sent. Please try again in a few minutes."
+    }
+  }
+}

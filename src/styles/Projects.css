@@ -1,64 +1,552 @@
+@import "../assets/styles/variables.css";
+
 .projects-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    min-height: 100vh;
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #1e1f26, #7e1dc3, #e6399b);
-    color: white;
+  width: 100%;
+  padding-top: calc(var(--header-h) + var(--space-lg));
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  min-height: calc(100svh - var(--header-h));
+  background: transparent;
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+/* Título */
+.fade-in-title-projects {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  line-height: var(--lh-h1);
+  margin: 0;
+}
+
+/* Grid */
+.projects-grid {
+  margin-top: var(--space-lg);
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(3, minmax(0, 340px));
+  justify-content: center;
+  width: 100%;
+  max-width: calc(340px * 3 + 26px * 2);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card base */
+.project-card {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+
+  border-radius: 16px;
+  padding: 18px;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease,
+    opacity 700ms ease;
+}
+
+/* Hover solo si NO hay una expandida */
+.projects-grid:not(.has-expanded) .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(255, 106, 0, 0.35);
+}
+
+/* Última card sola centrada (PERO no si está expandida) */
+.projects-grid
+  > .project-card:not(.is-expanded):nth-last-child(1):nth-child(3n + 1) {
+  grid-column: 2;
+}
+
+/* =========================
+   “Focus mode” cuando hay expandida
+========================= */
+.projects-grid.has-expanded .project-card.is-dimmed {
+  opacity: 0.45;
+  filter: blur(1px) saturate(0.85);
+  transform: scale(0.985);
+  pointer-events: none;
+}
+
+/* =========================
+   Inline expand (desktop/tablet horizontal)
+========================= */
+.project-card.is-expanded {
+  grid-column: 1 / -1;
+  justify-self: center;
+
+  width: min(1120px, 100%);
+  max-width: 1120px;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+  align-items: stretch;
+
+  padding: 18px;
+
+  border-radius: 24px;
+
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 106, 0, 0.22);
+}
+
+/* Spotlight ring */
+.project-card.is-expanded::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 30px;
+  pointer-events: none;
+
+  opacity: 0;
+  transform: scale(0.985);
+
+  transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card.is-expanded::before {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 28px rgba(255, 106, 0, 0.16), 0 0 60px rgba(255, 106, 0, 0.1);
+}
+
+/* Para FLIP: preparamos transform */
+.project-media,
+.project-body {
+  will-change: transform;
+}
+
+/* Imagen compacta */
+.project-image {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  border-radius: 12px;
+
+  transition: height 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Imagen en expandido */
+.project-image.is-expanded {
+  height: 100%;
+  min-height: 340px;
+  max-height: 540px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Body */
+.project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Tipografía interna */
+.project-card h2 {
+  font-family: var(--font-heading);
+  margin: 6px 0 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.project-card p {
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+/* Botón principal */
+.project-card .cta-button {
+  font-family: var(--font-ui);
+  width: fit-content;
+  min-width: 150px;
+  padding: 12px 18px;
+}
+
+/* Actions */
+.project-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Expand button */
+.expand-button {
+  font-family: var(--font-ui);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 14px;
+  border-radius: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+
+  color: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.expand-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(255, 106, 0, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.expand-button.open {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.expand-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.expand-text {
+  font-weight: var(--fw-button);
+  font-size: 0.95rem;
+}
+
+/* Botón secundario */
+.secondary-button {
+  font-family: var(--font-ui);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 12px 18px;
+  border-radius: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.secondary-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 16px rgba(255, 106, 0, 0.18);
+}
+
+/* =========================
+   TEXTO: crossfade corto ↔ largo
+========================= */
+
+/* Texto corto */
+.project-short {
+  opacity: 0.92;
+  line-height: 1.6;
+  font-size: 1rem;
+
+  max-height: 200px;
+  overflow: hidden;
+
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    max-height 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* MOVING: visible */
+.project-card.is-expanded.phase-moving .project-short {
+  opacity: 0.92;
+  transform: translateY(0);
+  max-height: 200px;
+}
+
+/* REVEALING: colapsa */
+.project-card.is-expanded.phase-revealing .project-short {
+  opacity: 0;
+  transform: translateY(-6px);
+  max-height: 0px;
+}
+
+/* Bloque largo (solo descripción) */
+.project-details {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+
+  transition: max-height 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: opacity, transform, max-height;
+}
+
+.project-details.open {
+  max-height: 900px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay suave post-FLIP */
+.project-card.phase-revealing .project-details.open {
+  transition-delay: 0ms, 120ms, 120ms;
+}
+
+.project-long {
+  opacity: 0;
+  transform: translateY(-4px);
+  line-height: 1.65;
+
+  transition: opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: opacity, transform;
+}
+
+.project-details.open .project-long {
+  opacity: 0.92;
+  transform: translateY(0);
+}
+
+/* =========================
+   EXTRA (tools + highlights)
+========================= */
+
+.project-extra {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+
+  transition: max-height 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: opacity, transform, max-height;
+}
+
+.project-card.is-expanded .project-extra {
+  grid-column: 1 / -1;
+}
+
+.project-extra.open {
+  max-height: 900px;
+  opacity: 1;
+  transform: translateY(0);
+
+  transition-delay: 220ms, 260ms, 260ms;
+}
+
+.project-extra.is-empty {
+  display: none;
+}
+
+.project-extra-inner {
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Subtítulos y listas dentro del extra */
+.project-subtitle {
+  font-family: var(--font-heading);
+  margin: 12px 0 0;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.tools-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-chip {
+  font-family: var(--font-ui);
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 0.92rem;
+  opacity: 0.95;
+}
+
+.project-list {
+  font-family: var(--font-body);
+  margin: 0;
+  padding-left: 18px;
+  opacity: 0.92;
+  line-height: 1.6;
+}
+
+/* Footer final */
+.project-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-card.is-expanded .project-footer {
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   Tablet
+========================= */
+@media (max-width: 1024px) {
+  .projects-container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    padding-bottom: var(--space-md);
+    padding-top: calc(var(--header-h) + var(--space-lg));
   }
-  
-  /* Grid de las tarjetas */
+
   .projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(2, minmax(0, 340px));
+    max-width: calc(340px * 2 + 26px);
+    gap: 20px;
   }
-  
-  /* Tarjetas de los proyectos */
-  .project-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 10px;
-    width: 320px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-  }
-  
-  .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 106, 0, 0.8);
-  }
-  
-  /* Imagen de cada proyecto */
+
   .project-image {
+    height: 175px;
+  }
+
+  .project-card.is-expanded {
+    grid-column: 1 / -1;
+    grid-template-columns: 1.1fr 0.9fr;
+    width: min(980px, 100%);
+    max-width: 980px;
+  }
+
+  .project-image.is-expanded {
+    min-height: 320px;
+    max-height: 520px;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 768px) {
+  .projects-container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    padding-bottom: var(--space-md);
+    padding-top: calc(var(--header-h) + var(--space-md));
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    gap: 18px;
   }
-  
-  /* Botón de ver proyecto */
-  .cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background: linear-gradient(135deg, #ff6a00, #ee0979);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease-in-out, background 0.3s;
-    margin-top: 15px;
+
+  /* Anula la regla de “última card centrada” en mobile */
+  .projects-grid
+    > .project-card:not(.is-expanded):nth-last-child(1):nth-child(3n + 1) {
+    grid-column: auto;
   }
-  
-  .cta-button:hover {
-    background: linear-gradient(135deg, #ee0979, #ff6a00);
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 106, 0, 0.8);
+
+  .project-card {
+    width: 100%;
+    text-align: center;
+    align-items: center;
   }
-  
+
+  .project-image {
+    height: 190px;
+  }
+
+  .project-card .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-card.is-expanded {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .project-image.is-expanded {
+    min-height: 220px;
+    max-height: 280px;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .secondary-button,
+  .project-card .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-footer {
+    width: 100%;
+  }
+
+  .project-footer .expand-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tools-chips {
+    justify-content: center;
+  }
+}
+
+/* =========================
+   Reduce motion
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-image,
+  .project-details,
+  .project-extra,
+  .expand-button,
+  .secondary-button,
+  .project-short,
+  .project-long {
+    transition: none;
+    transform: none;
+  }
+
+  .projects-grid.has-expanded .project-card.is-dimmed {
+    filter: none;
+    transform: none;
+  }
+
+  .projects-grid:not(.has-expanded) .project-card:hover {
+    transform: none;
+  }
+}

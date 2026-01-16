@@ -1,26 +1,12 @@
-/* Asegurar que el contenedor principal ocupe toda la pantalla */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Mantener el Navbar fijo y el contenido siempre visible */
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* suficiente */
 }
 
-/* Ajustar la altura del contenido para que siempre ocupe el espacio disponible */
+/* Navbar es fixed, así que el contenido arranca debajo */
 .page-content {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-}
-
-.full-width {
-  width: 100%;
+  display: block;
 }

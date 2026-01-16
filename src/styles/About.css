@@ -1,66 +1,234 @@
+@import "../assets/styles/variables.css";
+
+.about-container {
+  min-height: calc(100svh - var(--header-h));
+  padding-top: calc(var(--header-h) + var(--space-md));
+  padding-bottom: var(--space-lg);
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+  scroll-margin-top: var(--header-h);
+  overflow-x: clip;
+  box-sizing: border-box;
+}
+
+/* Caja centrada y “editorial” */
 .about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  max-width: 72ch;
+  width: 100%;
+  margin: 0 auto;
+  gap: var(--space-md);
+}
+
+/* Título */
+.fade-in-title-about {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  line-height: var(--lh-h1);
+
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.9s ease-out forwards;
+}
+
+/* Párrafos */
+.fade-up-text-about {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: var(--lh-body);
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 1s ease-out forwards;
+
+  max-width: 64ch;
+  margin: 0;
+}
+
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.24s; }
+
+/* Subtítulo sección técnica */
+.about-subtitle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-h2);
+  letter-spacing: 0.2px;
+  margin: var(--space-sm) 0 0 0;
+
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 1s ease-out forwards;
+
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.about-subtitle::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.25)
+  );
+}
+
+/* Animaciones escalonadas */
+.delay-3 { animation-delay: 0.36s; }
+.delay-4 { animation-delay: 0.48s; }
+.delay-5 { animation-delay: 0.60s; }
+.delay-6 { animation-delay: 0.72s; }
+.delay-7 { animation-delay: 0.84s; }
+
+/* Chips */
+.about-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  max-width: 70ch;
+}
+
+.chip {
+  font-family: var(--font-ui);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: var(--fs-chip);
+  letter-spacing: 0.2px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+/* Botón */
+.about-content .cta-button {
+  margin-top: var(--space-sm);
+  font-family: var(--font-ui);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   Tablet
+========================= */
+@media (max-width: 1024px) {
+  .about-container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    padding-bottom: var(--space-md);
+    padding-top: calc(var(--header-h) + var(--space-md));
   }
-  
-  
-  /* Animación de entrada del título */
-  .fade-in-title {
-    opacity: 0;
-    transform: translateY(-10px);
-    animation: fadeIn 1.2s ease-out forwards;
+
+  .about-content {
+    max-width: 68ch;
   }
-  
-  /* Animación de subida para el texto */
-  .fade-up-text {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1.5s ease-out forwards;
+
+  .fade-in-title-about {
+    font-size: clamp(2.1rem, 5vw, 3rem);
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 768px) {
+  .about-container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    padding-bottom: var(--space-md);
+    padding-top: calc(var(--header-h) + var(--space-sm));
   }
-  
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .about-content {
+    gap: var(--space-sm);
+    max-width: 46ch;
   }
-  
-  /* Botón con efecto */
-  .cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background: linear-gradient(135deg, #ff6a00, #ee0979);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease-in-out, background 0.3s;
-    margin-top: 20px;
+
+  .fade-up-text-about {
+    max-width: 40ch;
+    font-size: 1rem;
+    line-height: 1.65;
   }
-  
-  .cta-button:hover {
-    background: linear-gradient(135deg, #ee0979, #ff6a00);
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 106, 0, 0.8);
+
+  .about-chips {
+    max-width: 46ch;
+    gap: 8px;
   }
-  
+
+  .chip {
+    font-size: 0.88rem;
+    padding: 7px 10px;
+  }
+
+  .about-subtitle {
+    font-size: 1.08rem;
+  }
+}
+
+/* =========================
+   Mobile chico
+========================= */
+@media (max-width: 480px) {
+  .about-container {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+    padding-top: calc(var(--header-h) + var(--space-sm));
+    padding-bottom: var(--space-md);
+  }
+
+  .fade-in-title-about {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+
+  .fade-up-text-about {
+    max-width: 34ch;
+  }
+
+  .chip {
+    font-size: 0.84rem;
+    padding: 6px 10px;
+  }
+
+  .about-content .cta-button {
+    width: 100%;
+  }
+}
+
+/* =========================
+   Pantallas bajas
+========================= */
+@media (max-height: 720px) {
+  .about-container {
+    padding-top: calc(var(--header-h) + var(--space-xs));
+    padding-bottom: var(--space-md);
+  }
+
+  .about-content {
+    gap: var(--space-xs);
+  }
+
+  .fade-up-text-about {
+    line-height: 1.55;
+  }
+}

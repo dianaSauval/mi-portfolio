@@ -1,0 +1,116 @@
+[
+  {
+    "title": "CircusCoach (MyCircusCoach)",
+    "description": "Plataforma full-stack de e-learning para cursos y formaciones de circo, con contenido exclusivo y pagos online.",
+    "longDescription": "CircusCoach es una plataforma web full-stack orientada a la venta y visualización de cursos y formaciones de circo, pensada para un público internacional y con soporte multilenguaje (español, inglés y francés). El proyecto fue desarrollado a partir de lineamientos visuales y de experiencia definidos por el cliente, mientras que la arquitectura general, el desarrollo frontend y backend, la lógica de negocio, la seguridad y las integraciones externas fueron diseñadas e implementadas íntegramente por mí. Los usuarios acceden a contenido exclusivo tras la compra, incluyendo videos privados en Vimeo y documentos PDF gestionados en Cloudinary, visibles únicamente dentro de la plataforma. El sistema diferencia contenido público y pago, incorpora gestión de usuarios, control de acceso, panel de administración y una arquitectura desacoplada basada en API REST, desplegada en producción.",
+    "tools": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Stripe",
+      "Vimeo (videos públicos y privados)",
+      "Cloudinary (PDFs e imágenes)",
+      "Multi-language (ES / EN / FR)",
+      "Hostinger"
+    ],
+    "highlights": [
+      "Plataforma e-learning con acceso a contenido exclusivo tras la compra",
+      "soporte multilenguaje (español, inglés y francés)",
+      "Control de acceso a videos privados de Vimeo y PDFs privados en Cloudinary",
+      "Diferenciación entre contenido público y contenido pago",
+      "Integración de pagos online con Stripe",
+      "Panel de administración para gestión de formaciones y contenidos",
+      "Despliegue en producción sobre Hostinger"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805726/Portfolio/mycircuscoach_f5xyny.png",
+    "link": "https://mycircuscoach.com/",
+    "repoFrontend": "https://github.com/dianaSauval/CircusCoach-Frontend",
+    "repoBackend": "https://github.com/dianaSauval/CircusCoach-backend"
+  },
+  {
+    "title": "Marisa Rodríguez | Terapias Holísticas",
+    "description": "Plataforma web full-stack de cursos holísticos con carrito, pagos integrados y gestión de usuarios.",
+    "longDescription": "Aplicación web full-stack desarrollada para la marca personal de Marisa Rodríguez, concebida como una plataforma de venta y gestión de cursos holísticos. Incluye catálogo de cursos grabados y clases en vivo, carrito de compras y checkout con pagos integrados mediante PayPal y Mercado Pago. La aplicación implementa autenticación de usuarios con roles diferenciados (admin y usuario) y protección de rutas tanto en frontend como en backend, garantizando el acceso seguro a áreas privadas. Cuenta con un panel de administración desde el cual se gestionan cursos, clases, contenidos y visibilidad. El sistema está basado en una arquitectura desacoplada frontend-backend mediante API REST.",
+    "tools": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "PayPal",
+      "Mercado Pago",
+      "Cloudinary",
+      "Hostinger"
+    ],
+    "highlights": [
+      "Sistema de autenticación con roles diferenciados (admin y usuario)",
+      "Protección de rutas en frontend y backend",
+      "Catálogo de cursos y clases en vivo con experiencia de compra completa",
+      "Carrito y checkout con integración de PayPal y Mercado Pago",
+      "Panel de administración para gestión de cursos, clases y contenidos",
+      "Arquitectura frontend-backend desacoplada mediante API REST",
+      "Despliegue y hosting en Hostinger"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805654/Portfolio/marisa-terapias-holisticas_a96f9k.png",
+    "link": "https://marisarodriguezterapiasholisticas.com/",
+    "repoFrontend": "https://github.com/dianaSauval/Marisa-Rodriguez-Frontend",
+    "repoBackend": "https://github.com/dianaSauval/Marisa-Rodriguez---Backend"
+  },
+  {
+    "title": "Dúo Serendipia",
+    "description": "Sitio web oficial del Dúo Serendipia, un proyecto de acrobacia y danza contemporánea orientado a escenarios y eventos internacionales.",
+    "longDescription": "Web artística y profesional diseñada para presentar al Dúo Serendipia ante productoras, festivales y clientes internacionales. El sitio combina una estética sensible y elegante con una estructura clara orientada a mostrar actos, trayectoria y material audiovisual de forma inmediata. Cuenta con versión en español e inglés, es totalmente responsive y está pensada como una herramienta de venta directa: navegación simple, foco en mobile y tiempos de carga optimizados para envíos por WhatsApp, mail o audiciones online.",
+    "tools": [
+      "React",
+      "TypeScript",
+      "CSS",
+      "Cloudinary",
+      "YouTube embeds",
+      "Multi-language (ES / EN)",
+      "LatinCloud"
+    ],
+    "highlights": [
+      "Narrativa visual pensada para captar la atención de productoras en menos de 30 segundos",
+      "Versión en español e inglés para difusión internacional",
+      "Diseño elegante y minimalista alineado con la identidad artística del dúo",
+      "Experiencia mobile-first optimizada para compartir por redes y mensajería",
+      "Optimización de imágenes y recursos mediante Cloudinary",
+      "Despliegue y hosting en LatinCloud"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805527/Portfolio/duo-serendipia_yaabxx.png",
+    "link": "https://duoserendipia.com.ar",
+    "repo": "https://github.com/dianaSauval/PaginaSerendipia"
+  },
+  {
+    "title": "La Troupe Circo",
+    "description": "Sitio web institucional de La Troupe Circo, escuela de circo ubicada en Banfield, Buenos Aires.",
+    "longDescription": "Plataforma web institucional desarrollada para La Troupe Circo, escuela de circo con base en Banfield, Buenos Aires. El sitio organiza de forma clara sus propuestas formativas, disciplinas y vías de contacto, funcionando como punto central de comunicación entre la escuela y su comunidad. Construida sobre React y Create React App, la web ofrece una experiencia accesible, responsive y orientada a usuarios que consultan desde dispositivos móviles. Incluye formulario de contacto funcional con envío de correos y protección contra spam, además de una estética cercana alineada con el espíritu comunitario del proyecto.",
+    "tools": [
+      "React",
+      "Create React App",
+      "CSS",
+      "Material UI",
+      "Cloudinary",
+      "EmailJS",
+      "Google reCAPTCHA",
+      "LatinCloud"
+    ],
+    "highlights": [
+      "Web institucional orientada a una escuela de circo y su comunidad local",
+      "Comunicación clara de propuestas educativas, disciplinas y niveles",
+      "Formulario de contacto con EmailJS y protección mediante reCAPTCHA",
+      "Diseño responsive optimizado para consultas desde móvil",
+      "Gestión y optimización de imágenes mediante Cloudinary",
+      "Despliegue y hosting en LatinCloud"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805373/Portfolio/la-troupe_ymekyb.png",
+    "link": "https://latroupecirco.com.ar",
+    "repo": "https://github.com/dianaSauval/La-Troupe"
+  }
+]

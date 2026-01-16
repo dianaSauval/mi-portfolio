@@ -1,0 +1,116 @@
+[
+  {
+    "title": "CircusCoach (MyCircusCoach)",
+    "description": "Full-stack e-learning platform for circus courses and programs, with gated content and online payments.",
+    "longDescription": "CircusCoach is a full-stack web platform focused on selling and delivering circus courses and training programs for an international audience, with multilingual support (Spanish, English and French). The project was developed based on the client’s visual and UX guidelines, while the overall architecture, frontend and backend development, business logic, security and third-party integrations were fully designed and implemented by me. Users gain access to exclusive content after purchase, including private Vimeo videos and PDF documents managed in Cloudinary, accessible only inside the platform. The system separates free vs paid content, includes user management, access control, an admin panel, and a decoupled REST API architecture deployed to production.",
+    "tools": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Stripe",
+      "Vimeo (public & private videos)",
+      "Cloudinary (PDFs & images)",
+      "Multi-language (ES / EN / FR)",
+      "Hostinger"
+    ],
+    "highlights": [
+      "E-learning platform with gated content after purchase",
+      "Multilingual support (Spanish, English and French)",
+      "Access control for private Vimeo videos and private Cloudinary PDFs",
+      "Clear separation between free content and paid content",
+      "Online payments integration with Stripe",
+      "Admin panel to manage programs and content",
+      "Production deployment on Hostinger"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805726/Portfolio/mycircuscoach_f5xyny.png",
+    "link": "https://mycircuscoach.com/",
+    "repoFrontend": "https://github.com/dianaSauval/CircusCoach-Frontend",
+    "repoBackend": "https://github.com/dianaSauval/CircusCoach-backend"
+  },
+  {
+    "title": "Marisa Rodríguez | Holistic Therapies",
+    "description": "Full-stack platform for holistic courses with cart, integrated payments and user management.",
+    "longDescription": "Full-stack web application developed for Marisa Rodríguez’s personal brand, designed as a platform to sell and manage holistic courses. It includes a catalog of recorded courses and live classes, a shopping cart, and checkout with integrated payments via PayPal and Mercado Pago. The app implements user authentication with role-based access (admin and user) and protected routes on both frontend and backend, ensuring secure access to private areas. It also features an admin panel to manage courses, classes, content and visibility. The system follows a decoupled frontend-backend architecture via a REST API.",
+    "tools": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "PayPal",
+      "Mercado Pago",
+      "Cloudinary",
+      "Hostinger"
+    ],
+    "highlights": [
+      "Authentication system with role-based access (admin and user)",
+      "Protected routes on frontend and backend",
+      "Catalog of courses and live classes with a complete purchase flow",
+      "Cart and checkout with PayPal and Mercado Pago integrations",
+      "Admin panel to manage courses, classes and content",
+      "Decoupled frontend-backend architecture via REST API",
+      "Deployment and hosting on Hostinger"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805654/Portfolio/marisa-terapias-holisticas_a96f9k.png",
+    "link": "https://marisarodriguezterapiasholisticas.com/",
+    "repoFrontend": "https://github.com/dianaSauval/Marisa-Rodriguez-Frontend",
+    "repoBackend": "https://github.com/dianaSauval/Marisa-Rodriguez---Backend"
+  },
+  {
+    "title": "Dúo Serendipia",
+    "description": "Official website for Dúo Serendipia — an acrobatics and contemporary dance project for international stages and events.",
+    "longDescription": "An artistic and professional website designed to present Dúo Serendipia to producers, festivals and international clients. It combines a sensitive, elegant aesthetic with a clear structure focused on showcasing acts, experience and audiovisual material quickly. The site includes Spanish and English versions, is fully responsive, and is built as a direct sales tool: simple navigation, mobile-first focus, and optimized load times for sharing via WhatsApp, email or online auditions.",
+    "tools": [
+      "React",
+      "TypeScript",
+      "CSS",
+      "Cloudinary",
+      "YouTube embeds",
+      "Multi-language (ES / EN)",
+      "LatinCloud"
+    ],
+    "highlights": [
+      "Visual storytelling designed to capture a producer’s attention in under 30 seconds",
+      "Spanish and English versions for international outreach",
+      "Elegant, minimal design aligned with the duo’s artistic identity",
+      "Mobile-first experience optimized for sharing on social and messaging apps",
+      "Image and asset optimization via Cloudinary",
+      "Deployment and hosting on LatinCloud"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805527/Portfolio/duo-serendipia_yaabxx.png",
+    "link": "https://duoserendipia.com.ar",
+    "repo": "https://github.com/dianaSauval/PaginaSerendipia"
+  },
+  {
+    "title": "La Troupe Circo",
+    "description": "Institutional website for La Troupe Circo, a circus school based in Banfield, Buenos Aires.",
+    "longDescription": "An institutional web platform developed for La Troupe Circo, a circus school based in Banfield, Buenos Aires. The site clearly organizes its training programs, disciplines and contact channels, serving as the central communication hub between the school and its community. Built with React and Create React App, it delivers an accessible, responsive experience oriented to mobile users. It includes a functional contact form with email sending and anti-spam protection, plus a friendly aesthetic aligned with the project’s community spirit.",
+    "tools": [
+      "React",
+      "Create React App",
+      "CSS",
+      "Material UI",
+      "Cloudinary",
+      "EmailJS",
+      "Google reCAPTCHA",
+      "LatinCloud"
+    ],
+    "highlights": [
+      "Institutional website for a circus school and its local community",
+      "Clear communication of training offers, disciplines and levels",
+      "Contact form with EmailJS and reCAPTCHA protection",
+      "Responsive design optimized for mobile enquiries",
+      "Image management and optimization via Cloudinary",
+      "Deployment and hosting on LatinCloud"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805373/Portfolio/la-troupe_ymekyb.png",
+    "link": "https://latroupecirco.com.ar",
+    "repo": "https://github.com/dianaSauval/La-Troupe"
+  }
+]

@@ -1,0 +1,435 @@
+@import "../assets/styles/variables.css";
+
+.contact-page {
+  width: 100%;
+  padding-top: calc(var(--header-h) + var(--space-lg));
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  min-height: calc(100svh - var(--header-h));
+  color: white;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+.contact-hero {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  line-height: var(--lh-h1);
+  margin: 0;
+}
+
+.contact-subtitle {
+  margin: var(--space-sm) auto 0;
+  max-width: 720px;
+
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  opacity: 0.9;
+}
+
+.contact-grid {
+  margin: var(--space-lg) auto 0;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-lg);
+}
+
+.contact-card {
+  border-radius: var(--radius-img);
+  padding: clamp(18px, 2.2vw, 26px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+}
+
+.contact-h3 {
+  margin: 0 0 var(--space-sm) 0;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  letter-spacing: 0.2px;
+}
+
+/* Info */
+.contact-info {
+  display: grid;
+  gap: 14px;
+}
+
+.info-row {
+  display: grid;
+  gap: 6px;
+}
+
+.info-label {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.info-text {
+  font-family: var(--font-body);
+  opacity: 0.9;
+  line-height: var(--lh-body);
+}
+
+.info-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  font-family: var(--font-ui);
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.18);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+
+  transition: transform var(--transition-fast),
+    background var(--transition-fast), opacity var(--transition-fast);
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.28);
+  opacity: 0.95;
+}
+
+.contact-note {
+  margin-top: var(--space-md);
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.18);
+  opacity: 0.95;
+}
+
+.contact-note p {
+  font-family: var(--font-body);
+  margin: 0;
+  line-height: var(--lh-body);
+}
+
+/* =========================
+   Form
+========================= */
+.contact-form {
+  display: grid;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+/* ✅ Importante: no usar label global */
+.contact-form label {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+
+  transition: border var(--transition-fast), transform var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: var(--lh-body);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.32);
+  transform: translateY(-1px);
+}
+
+/* Honeypot */
+.honey {
+  display: none;
+}
+
+/* Errors */
+.field-error {
+  font-family: var(--font-ui);
+  margin: 6px 0 0;
+  font-size: 0.92rem;
+  opacity: 0.9;
+}
+
+.form-status {
+  font-family: var(--font-ui);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.form-status.error {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Button */
+.btn-send {
+  font-family: var(--font-ui);
+  justify-self: start;
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 12px 18px;
+  font-size: var(--fs-button);
+  font-weight: var(--fw-button);
+  cursor: pointer;
+
+  color: #151515;
+  background: rgba(255, 255, 255, 0.92);
+
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.btn-send:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.btn-send:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.privacy-hint {
+  font-family: var(--font-body);
+  margin: 0;
+  font-size: 0.92rem;
+  opacity: 0.75;
+  line-height: 1.4;
+}
+
+/* Thanks */
+.thanks {
+  display: grid;
+  gap: 14px;
+}
+
+.thanks-text {
+  font-family: var(--font-body);
+  margin: 0;
+  opacity: 0.9;
+  line-height: var(--lh-body);
+}
+
+.thanks-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.btn-secondary {
+  font-family: var(--font-ui);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-btn);
+  padding: 12px 18px;
+  font-size: var(--fs-button);
+  font-weight: var(--fw-button);
+  cursor: pointer;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.18);
+
+  transition: transform var(--transition-fast), opacity var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+/* =========================
+   Custom Select (sin estilos nativos feos)
+========================= */
+.cselect {
+  position: relative;
+}
+
+.cselect-btn {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 44px 12px 14px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  transition: border var(--transition-fast), background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.cselect-value {
+  font-family: var(--font-body);
+  opacity: 0.95;
+}
+
+.cselect-btn:hover {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.cselect.open .cselect-btn,
+.cselect-btn:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.32);
+  transform: translateY(-1px);
+}
+
+.cselect-arrow {
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.cselect-menu {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+.cselect-item {
+  width: 100%;
+  text-align: left;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  border: none;
+  background: transparent;
+  color: white;
+
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+
+  cursor: pointer;
+
+  transition: background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.cselect-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.cselect-item.selected {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .contact-grid {
+    width: 100%;
+    max-width: 100%;
+    justify-items: stretch;
+  }
+
+  .contact-card {
+    width: 100%;
+  }
+
+  .contact-page {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .btn-send {
+    width: 100%;
+    justify-self: stretch;
+    text-align: center;
+  }
+
+  .thanks-actions {
+    flex-direction: column;
+  }
+
+  .btn-secondary,
+  .btn-send {
+    width: 100%;
+  }
+}

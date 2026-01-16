@@ -1,0 +1,50 @@
+:root {
+  --header-h: 60px;
+
+  /* =========================
+     Tipografías (1 sola decisión acá)
+  ========================= */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Poppins", system-ui, sans-serif;
+
+  /* Roles tipográficos */
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-display);
+  --font-ui: var(--font-sans); /* botones, nav, chips */
+
+  /* =========================
+     Tamaños
+  ========================= */
+  --fs-h1: clamp(2.8rem, 4vw, 3.6rem);
+  --fs-h2: clamp(1.15rem, 1.6vw, 1.35rem);
+  --fs-h3: 1.3rem;
+  --fs-body: 1.05rem;
+  --fs-button: 0.95rem;
+  --fs-chip: 0.92rem;
+  --fs-card-title: 1.25rem;
+  --fs-small: 0.95rem;
+
+  /* Pesos */
+  --fw-h1: 700;
+  --fw-h2: 700;
+  --fw-h3: 500;
+  --fw-body: 400;
+  --fw-button: 600;
+
+  /* Espaciados */
+  --lh-h1: 1.1;
+  --lh-body: 1.7;
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 20px;
+  --space-lg: 40px;
+
+  /* Bordes */
+  --radius-img: 14px;
+  --radius-btn: 50px;
+
+  /* Transiciones */
+  --transition-fast: 0.3s ease;
+  --transition-smooth: 0.6s ease;
+}

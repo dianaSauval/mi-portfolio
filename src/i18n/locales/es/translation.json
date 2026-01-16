@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "openMenu": "Abrir menú",
+    "language": "Idioma"
+  },
+  "lang": {
+    "es": "Español",
+    "en": "Inglés"
+  },
+  "home": {
+    "titleLine1": "Desarrolladora Full-Stack",
+    "titleLine2": "Plataformas Web",
+    "subtitle": "Plataformas web, proyectos reales, enfoque humano",
+    "text": "Diseño y desarrollo plataformas web completas, del frontend al backend, con foco en claridad, estructura y experiencia real de uso. Trabajo en proyectos con paneles de administración, gestión de contenidos y sistemas de pago, cuidando tanto lo técnico como lo humano detrás de cada producto.",
+    "cta": "Ver Proyectos",
+    "imageAlt": "Diana Sauval"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "p1": "Soy desarrolladora web Full-Stack y creo sitios y plataformas completas para proyectos reales.",
+    "p2": "Diseño y desarrollo productos digitales claros, funcionales y fáciles de usar, acompañando a cada cliente desde la idea inicial hasta la puesta en funcionamiento.",
+    "p3": "Me enfoco en construir soluciones sólidas, bien estructuradas y pensadas para crecer, cuidando tanto el funcionamiento interno como la experiencia de quienes las usan.",
+    "techTitle": "Stack técnico",
+    "tech1": "Trabajo en todo el stack utilizando React y Vite en el frontend, y Node.js, Express y MongoDB en el backend.",
+    "tech2": "Desarrollo paneles de administración, sistemas de autenticación, gestión de contenidos y plataformas con pagos online.",
+    "tech3": "Integro servicios como Cloudinary y Vimeo para manejo de archivos, y pasarelas de pago como Mercado Pago, PayPal y Stripe.",
+    "tech4": "Completé el programa IBM Cybersecurity Analyst y obtuve sus credenciales, incorporando buenas prácticas de seguridad en los proyectos que desarrollo.",
+    "chips": {
+      "payments": "Pagos",
+      "cybersecurity": "Ciberseguridad"
+    },
+    "cta": "Hablemos"
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "viewProject": "Ver Proyecto",
+    "tools": "Herramientas",
+    "highlights": "Qué hice",
+    "code": "Código",
+    "codeFrontend": "Código (Frontend)",
+    "codeBackend": "Código (Backend)",
+    "expand": "Expandir",
+    "collapse": "Contraer"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Completá el formulario y recibirás respuesta por email a la brevedad.",
+
+    "infoTitle": "Información",
+    "responseTimeLabel": "Tiempo de respuesta",
+    "responseTimeText": "Habitualmente dentro de 24–48 horas.",
+    "speedUpLabel": "Para agilizar",
+    "speedUpText": "Indicá objetivo, fecha/plazo y cualquier detalle relevante.",
+    "socialLabel": "Redes",
+
+    "note": "Para poder ayudarte mejor, contame el objetivo de la página, qué secciones necesitás, si tenés referencias visuales y en qué plazo te gustaría avanzar con el proyecto.",
+
+    "formTitle": "Enviar un mensaje",
+
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre",
+
+    "emailLabel": "Email",
+    "emailPlaceholder": "tuemail@ejemplo.com",
+
+    "reasonLabel": "Motivo",
+    "reasons": {
+      "webProject": "Proyecto web",
+      "budget": "Presupuesto",
+      "collaboration": "Colaboración",
+      "other": "Otro"
+    },
+
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Describí brevemente tu consulta y los detalles más importantes.",
+
+    "sending": "Enviando...",
+    "send": "Enviar mensaje",
+
+    "privacyHint": "La información se utiliza únicamente para responder tu consulta.",
+
+    "successTitle": "Mensaje enviado correctamente",
+    "successText": "Gracias por contactarte. Tu mensaje fue enviado y será respondido al email indicado.",
+    "backHome": "Volver al inicio",
+    "sendAnother": "Enviar otro mensaje",
+
+    "errors": {
+      "name": "Por favor, indicá tu nombre.",
+      "email": "Ingresá un email válido.",
+      "reason": "Seleccioná un motivo.",
+      "message": "El mensaje debe tener al menos 10 caracteres.",
+      "missingEmailjs": "Falta configurar EmailJS (revisá tus variables en el .env).",
+      "sendFailed": "No se pudo enviar el mensaje. Por favor, intentá nuevamente en unos minutos."
+    }
+  }
+}
