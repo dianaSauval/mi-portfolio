@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState, useMemo } from "react";
+import { Helmet } from "react-helmet-async";
 import "../styles/Projects.css";
 import { useTranslation } from "react-i18next";
 
@@ -7,6 +8,20 @@ import projectsEN from "../assets/data/projects.en.json";
 
 function Projects() {
   const { t, i18n } = useTranslation();
+
+  const lang = i18n.language?.startsWith("es") ? "es" : "en";
+
+  const seoTitle = {
+    es: "Proyectos · Diana Sauval",
+    en: "Projects · Diana Sauval",
+  }[lang];
+
+  const seoDescription = {
+    es: "Proyectos web desarrollados por Diana Sauval: sitios y aplicaciones con React, Node y MongoDB. Mirá casos reales, stack y repos.",
+    en: "Web projects by Diana Sauval: sites and apps built with React, Node and MongoDB. Real cases, stack and repos.",
+  }[lang];
+
+  const canonicalUrl = "https://dianasauvaldigital.com.ar/projects";
 
   const projectsData = useMemo(() => {
     const lng = i18n.language?.startsWith("es") ? "es" : "en";
@@ -143,163 +158,198 @@ function Projects() {
   const hasExpanded = expandedIndex !== null;
 
   return (
-    <div className="projects-container">
-      <h1 className="fade-in-title-projects">{t("projects.title")}</h1>
+    <>
+      {/* 🔹 SEO */}
+      <Helmet>
+        <html lang={lang} />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={canonicalUrl} />
 
-      <div className={`projects-grid ${hasExpanded ? "has-expanded" : ""}`}>
-        {projectsData.map((project, index) => {
-          const isExpanded = expandedIndex === index;
+        {/* Open Graph para compartir /projects */}
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta
+          property="og:image"
+          content="https://dianasauvaldigital.com.ar/og-cover.jpg"
+        />
 
-          const isMoving = isExpanded && phase === "moving";
-          const isRevealing = isExpanded && phase === "revealing";
+        {/* Twitter Card */}
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta
+          name="twitter:image"
+          content="https://dianasauvaldigital.com.ar/og-cover.jpg"
+        />
+      </Helmet>
 
-          const hasTools = (project.tools?.length ?? 0) > 0;
-          const hasHighlights = (project.highlights?.length ?? 0) > 0;
+      <div className="projects-container">
+        <h1 className="fade-in-title-projects">{t("projects.title")}</h1>
 
-          const repoFront = project.repoFrontend || project.frontendRepo || null;
-          const repoBack = project.repoBackend || project.backendRepo || null;
-          const repoSingle = project.repo || null;
+        <div className={`projects-grid ${hasExpanded ? "has-expanded" : ""}`}>
+          {projectsData.map((project, index) => {
+            const isExpanded = expandedIndex === index;
 
-          return (
-            <article
-              key={index}
-              ref={setCardRef(index)}
-              className={[
-                "project-card",
-                "fade-up-text",
-                isExpanded ? "is-expanded" : "",
-                hasExpanded && !isExpanded ? "is-dimmed" : "",
-                isExpanded && isMoving ? "phase-moving" : "",
-                isExpanded && isRevealing ? "phase-revealing" : "",
-              ].join(" ")}
-            >
-              <div className="project-media">
-                <img
-                  ref={setImgRef(index)}
-                  src={project.image}
-                  alt={project.title}
-                  className={`project-image ${isExpanded ? "is-expanded" : ""}`}
-                  loading="lazy"
-                />
-              </div>
+            const isMoving = isExpanded && phase === "moving";
+            const isRevealing = isExpanded && phase === "revealing";
 
-              <div ref={setBodyRef(index)} className="project-body">
-                <h2>{project.title}</h2>
+            const hasTools = (project.tools?.length ?? 0) > 0;
+            const hasHighlights = (project.highlights?.length ?? 0) > 0;
 
-                <p className="project-short">{project.description}</p>
+            const repoFront =
+              project.repoFrontend || project.frontendRepo || null;
+            const repoBack =
+              project.repoBackend || project.backendRepo || null;
+            const repoSingle = project.repo || null;
 
-                <div className={`project-details ${isRevealing ? "open" : ""}`}>
-                  <p className="project-long">
-                    {project.longDescription || project.description}
-                  </p>
-                </div>
-
-                <div className="project-actions">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cta-button glow-button"
-                  >
-                    {t("projects.viewProject")}
-                  </a>
-
-                  {isRevealing && (
-                    <>
-                      {repoFront && (
-                        <a
-                          href={repoFront}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="secondary-button"
-                        >
-                          {t("projects.codeFrontend")}
-                        </a>
-                      )}
-
-                      {repoBack && (
-                        <a
-                          href={repoBack}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="secondary-button"
-                        >
-                          {t("projects.codeBackend")}
-                        </a>
-                      )}
-
-                      {!repoFront && !repoBack && repoSingle && (
-                        <a
-                          href={repoSingle}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="secondary-button"
-                        >
-                          {t("projects.code")}
-                        </a>
-                      )}
-                    </>
-                  )}
-                </div>
-              </div>
-
-              <div
+            return (
+              <article
+                key={index}
+                ref={setCardRef(index)}
                 className={[
-                  "project-extra",
-                  isRevealing ? "open" : "",
-                  !hasTools && !hasHighlights ? "is-empty" : "",
+                  "project-card",
+                  "fade-up-text",
+                  isExpanded ? "is-expanded" : "",
+                  hasExpanded && !isExpanded ? "is-dimmed" : "",
+                  isExpanded && isMoving ? "phase-moving" : "",
+                  isExpanded && isRevealing ? "phase-revealing" : "",
                 ].join(" ")}
-                aria-hidden={!isRevealing}
               >
-                {(hasTools || hasHighlights) && (
-                  <div className="project-extra-inner">
-                    {hasTools && (
-                      <>
-                        <h3 className="project-subtitle">{t("projects.tools")}</h3>
-                        <div className="tools-chips">
-                          {project.tools.map((tool, i) => (
-                            <span className="tool-chip" key={i}>
-                              {tool}
-                            </span>
-                          ))}
-                        </div>
-                      </>
-                    )}
+                <div className="project-media">
+                  <img
+                    ref={setImgRef(index)}
+                    src={project.image}
+                    alt={project.title}
+                    className={`project-image ${isExpanded ? "is-expanded" : ""}`}
+                    loading="lazy"
+                  />
+                </div>
 
-                    {hasHighlights && (
+                <div ref={setBodyRef(index)} className="project-body">
+                  <h2>{project.title}</h2>
+
+                  <p className="project-short">{project.description}</p>
+
+                  <div
+                    className={`project-details ${isRevealing ? "open" : ""}`}
+                  >
+                    <p className="project-long">
+                      {project.longDescription || project.description}
+                    </p>
+                  </div>
+
+                  <div className="project-actions">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cta-button glow-button"
+                    >
+                      {t("projects.viewProject")}
+                    </a>
+
+                    {isRevealing && (
                       <>
-                        <h3 className="project-subtitle">{t("projects.highlights")}</h3>
-                        <ul className="project-list">
-                          {project.highlights.map((h, i) => (
-                            <li key={i}>{h}</li>
-                          ))}
-                        </ul>
+                        {repoFront && (
+                          <a
+                            href={repoFront}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="secondary-button"
+                          >
+                            {t("projects.codeFrontend")}
+                          </a>
+                        )}
+
+                        {repoBack && (
+                          <a
+                            href={repoBack}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="secondary-button"
+                          >
+                            {t("projects.codeBackend")}
+                          </a>
+                        )}
+
+                        {!repoFront && !repoBack && repoSingle && (
+                          <a
+                            href={repoSingle}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="secondary-button"
+                          >
+                            {t("projects.code")}
+                          </a>
+                        )}
                       </>
                     )}
                   </div>
-                )}
-              </div>
+                </div>
 
-              <div className="project-footer">
-                <button
-                  type="button"
-                  className={`expand-button ${isExpanded ? "open" : ""}`}
-                  onClick={() => toggleExpand(index)}
-                  aria-expanded={isExpanded}
+                <div
+                  className={[
+                    "project-extra",
+                    isRevealing ? "open" : "",
+                    !hasTools && !hasHighlights ? "is-empty" : "",
+                  ].join(" ")}
+                  aria-hidden={!isRevealing}
                 >
-                  <span className="expand-icon" aria-hidden="true">
-                    {isExpanded ? "⤡" : "⤢"}
-                  </span>
-                  <span className="expand-text">
-                    {isExpanded ? t("projects.collapse") : t("projects.expand")}
-                  </span>
-                </button>
-              </div>
-            </article>
-          );
-        })}
+                  {(hasTools || hasHighlights) && (
+                    <div className="project-extra-inner">
+                      {hasTools && (
+                        <>
+                          <h3 className="project-subtitle">
+                            {t("projects.tools")}
+                          </h3>
+                          <div className="tools-chips">
+                            {project.tools.map((tool, i) => (
+                              <span className="tool-chip" key={i}>
+                                {tool}
+                              </span>
+                            ))}
+                          </div>
+                        </>
+                      )}
+
+                      {hasHighlights && (
+                        <>
+                          <h3 className="project-subtitle">
+                            {t("projects.highlights")}
+                          </h3>
+                          <ul className="project-list">
+                            {project.highlights.map((h, i) => (
+                              <li key={i}>{h}</li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                <div className="project-footer">
+                  <button
+                    type="button"
+                    className={`expand-button ${isExpanded ? "open" : ""}`}
+                    onClick={() => toggleExpand(index)}
+                    aria-expanded={isExpanded}
+                  >
+                    <span className="expand-icon" aria-hidden="true">
+                      {isExpanded ? "⤡" : "⤢"}
+                    </span>
+                    <span className="expand-text">
+                      {isExpanded ? t("projects.collapse") : t("projects.expand")}
+                    </span>
+                  </button>
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

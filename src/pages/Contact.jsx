@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -27,6 +28,20 @@ const INITIAL_FORM = {
 export default function Contact() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+
+  const lang = i18n.language?.startsWith("es") ? "es" : "en";
+
+  const seoTitle = {
+    es: "Contacto · Diana Sauval",
+    en: "Contact · Diana Sauval",
+  }[lang];
+
+  const seoDescription = {
+    es: "Contactá a Diana Sauval para desarrollo web, proyectos freelance o colaboraciones. Contame tu idea y te respondo con próximos pasos.",
+    en: "Contact Diana Sauval for web development, freelance projects or collaborations. Share your idea and I’ll reply with next steps.",
+  }[lang];
+
+  const canonicalUrl = "https://dianasauvaldigital.com.ar/contact";
 
   // reasons como lista traducida (labels cambian con el idioma)
   const reasons = useMemo(
@@ -158,168 +173,195 @@ export default function Contact() {
   };
 
   return (
-    <section className="contact-page">
-      <header className="contact-hero">
-        <h1 className="contact-title">{t("contact.title")}</h1>
-        <p className="contact-subtitle">{t("contact.subtitle")}</p>
-      </header>
+    <>
+      {/* 🔹 SEO */}
+      <Helmet>
+        <html lang={lang} />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={canonicalUrl} />
 
-      <div className="contact-grid">
-        {/* Columna info */}
-        <div className="contact-card info-card">
-          <h3 className="contact-h3">{t("contact.infoTitle")}</h3>
+        {/* Open Graph para compartir /contact */}
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta
+          property="og:image"
+          content="https://dianasauvaldigital.com.ar/og-cover.jpg"
+        />
 
-          <div className="contact-info">
-            <div className="info-row">
-              <span className="info-label">{t("contact.responseTimeLabel")}</span>
-              <span className="info-text">{t("contact.responseTimeText")}</span>
-            </div>
+        {/* Twitter Card */}
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta
+          name="twitter:image"
+          content="https://dianasauvaldigital.com.ar/og-cover.jpg"
+        />
+      </Helmet>
 
-            <div className="info-row">
-              <span className="info-label">{t("contact.speedUpLabel")}</span>
-              <span className="info-text">{t("contact.speedUpText")}</span>
-            </div>
+      <section className="contact-page">
+        <header className="contact-hero">
+          <h1 className="contact-title">{t("contact.title")}</h1>
+          <p className="contact-subtitle">{t("contact.subtitle")}</p>
+        </header>
 
-            <div className="info-row">
-              <span className="info-label">{t("contact.socialLabel")}</span>
-              <div className="info-social">
-                <a
-                  className="chip"
-                  href="https://www.instagram.com/dianasauval"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Instagram
-                </a>
-                <a
-                  className="chip"
-                  href="https://www.linkedin.com/in/diana-sauval/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  className="chip"
-                  href="https://github.com/dianaSauval"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
+        <div className="contact-grid">
+          {/* Columna info */}
+          <div className="contact-card info-card">
+            <h3 className="contact-h3">{t("contact.infoTitle")}</h3>
+
+            <div className="contact-info">
+              <div className="info-row">
+                <span className="info-label">{t("contact.responseTimeLabel")}</span>
+                <span className="info-text">{t("contact.responseTimeText")}</span>
+              </div>
+
+              <div className="info-row">
+                <span className="info-label">{t("contact.speedUpLabel")}</span>
+                <span className="info-text">{t("contact.speedUpText")}</span>
+              </div>
+
+              <div className="info-row">
+                <span className="info-label">{t("contact.socialLabel")}</span>
+                <div className="info-social">
+                  <a
+                    className="chip"
+                    href="https://www.instagram.com/dianasauval"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Instagram
+                  </a>
+                  <a
+                    className="chip"
+                    href="https://www.linkedin.com/in/diana-sauval/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    className="chip"
+                    href="https://github.com/dianaSauval"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </div>
               </div>
             </div>
+
+            <div className="contact-note">
+              <p>{t("contact.note")}</p>
+            </div>
           </div>
 
-          <div className="contact-note">
-            <p>{t("contact.note")}</p>
-          </div>
-        </div>
+          {/* Columna formulario / gracias */}
+          <div className="contact-card form-card">
+            {!sent ? (
+              <>
+                <h3 className="contact-h3">{t("contact.formTitle")}</h3>
 
-        {/* Columna formulario / gracias */}
-        <div className="contact-card form-card">
-          {!sent ? (
-            <>
-              <h3 className="contact-h3">{t("contact.formTitle")}</h3>
-
-              <form className="contact-form" onSubmit={onSubmit} noValidate>
-                {/* Honeypot oculto */}
-                <input
-                  className="honey"
-                  type="text"
-                  name="website"
-                  value={form.website}
-                  onChange={onChange}
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-
-                <div className="field">
-                  <label htmlFor="name">{t("contact.nameLabel")}</label>
+                <form className="contact-form" onSubmit={onSubmit} noValidate>
+                  {/* Honeypot oculto */}
                   <input
-                    id="name"
-                    name="name"
+                    className="honey"
                     type="text"
-                    placeholder={t("contact.namePlaceholder")}
-                    value={form.name}
+                    name="website"
+                    value={form.website}
                     onChange={onChange}
-                  />
-                  {errors.name && <p className="field-error">{errors.name}</p>}
-                </div>
-
-                <div className="field">
-                  <label htmlFor="email">{t("contact.emailLabel")}</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder={t("contact.emailPlaceholder")}
-                    value={form.email}
-                    onChange={onChange}
-                  />
-                  {errors.email && <p className="field-error">{errors.email}</p>}
-                </div>
-
-                {/* ✅ Custom Select */}
-                <div className="field">
-                  <label htmlFor="reason">{t("contact.reasonLabel")}</label>
-
-                  <CustomSelect
-                    id="reason"
-                    value={form.reason}
-                    options={reasons.map((r) => r.label)}
-                    onChange={setReason}
+                    tabIndex={-1}
+                    autoComplete="off"
                   />
 
-                  {errors.reason && <p className="field-error">{errors.reason}</p>}
+                  <div className="field">
+                    <label htmlFor="name">{t("contact.nameLabel")}</label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      placeholder={t("contact.namePlaceholder")}
+                      value={form.name}
+                      onChange={onChange}
+                    />
+                    {errors.name && <p className="field-error">{errors.name}</p>}
+                  </div>
+
+                  <div className="field">
+                    <label htmlFor="email">{t("contact.emailLabel")}</label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder={t("contact.emailPlaceholder")}
+                      value={form.email}
+                      onChange={onChange}
+                    />
+                    {errors.email && <p className="field-error">{errors.email}</p>}
+                  </div>
+
+                  {/* ✅ Custom Select */}
+                  <div className="field">
+                    <label htmlFor="reason">{t("contact.reasonLabel")}</label>
+
+                    <CustomSelect
+                      id="reason"
+                      value={form.reason}
+                      options={reasons.map((r) => r.label)}
+                      onChange={setReason}
+                    />
+
+                    {errors.reason && <p className="field-error">{errors.reason}</p>}
+                  </div>
+
+                  <div className="field">
+                    <label htmlFor="message">{t("contact.messageLabel")}</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      placeholder={t("contact.messagePlaceholder")}
+                      value={form.message}
+                      onChange={onChange}
+                    />
+                    {errors.message && <p className="field-error">{errors.message}</p>}
+                  </div>
+
+                  {errors.general && (
+                    <div className="form-status error">{errors.general}</div>
+                  )}
+
+                  <button className="btn-send" type="submit" disabled={isSending}>
+                    {isSending ? t("contact.sending") : t("contact.send")}
+                  </button>
+
+                  <p className="privacy-hint">{t("contact.privacyHint")}</p>
+                </form>
+              </>
+            ) : (
+              <div className="thanks">
+                <h3 className="contact-h3">{t("contact.successTitle")}</h3>
+                <p className="thanks-text">{t("contact.successText")}</p>
+
+                <div className="thanks-actions">
+                  <button
+                    className="btn-secondary"
+                    type="button"
+                    onClick={() => navigate("/")}
+                  >
+                    {t("contact.backHome")}
+                  </button>
+
+                  <button className="btn-send" type="button" onClick={sendAnother}>
+                    {t("contact.sendAnother")}
+                  </button>
                 </div>
-
-                <div className="field">
-                  <label htmlFor="message">{t("contact.messageLabel")}</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder={t("contact.messagePlaceholder")}
-                    value={form.message}
-                    onChange={onChange}
-                  />
-                  {errors.message && <p className="field-error">{errors.message}</p>}
-                </div>
-
-                {errors.general && (
-                  <div className="form-status error">{errors.general}</div>
-                )}
-
-                <button className="btn-send" type="submit" disabled={isSending}>
-                  {isSending ? t("contact.sending") : t("contact.send")}
-                </button>
-
-                <p className="privacy-hint">{t("contact.privacyHint")}</p>
-              </form>
-            </>
-          ) : (
-            <div className="thanks">
-              <h3 className="contact-h3">{t("contact.successTitle")}</h3>
-              <p className="thanks-text">{t("contact.successText")}</p>
-
-              <div className="thanks-actions">
-                <button
-                  className="btn-secondary"
-                  type="button"
-                  onClick={() => navigate("/")}
-                >
-                  {t("contact.backHome")}
-                </button>
-
-                <button className="btn-send" type="button" onClick={sendAnother}>
-                  {t("contact.sendAnother")}
-                </button>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
