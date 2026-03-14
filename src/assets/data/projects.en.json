@@ -32,6 +32,40 @@
     "repoBackend": "https://github.com/dianaSauval/CircusCoach-backend"
   },
   {
+    "title": "Flor Albarracín | Official Website",
+    "description": "Official website for singer-songwriter, actress and multi-instrumentalist Flor Albarracín, featuring a theatrical aesthetic and immersive visual experience.",
+    "longDescription": "Official website developed for singer-songwriter, actress and multi-instrumentalist Flor Albarracín. The project was conceived as an artistic platform and professional presentation tool aimed at producers, festivals and the general audience. The website combines an elegant theatrical aesthetic with a dynamic visual experience through parallax image effects and scroll-triggered animations, creating an immersive narrative while navigating the site. It includes sections for biography, music, live videos, press and contact. Music videos are integrated through YouTube embeds and Spotify content, while the live performance video is directly integrated within the page. The press section features an interactive publication embedded from Yumpu, allowing users to browse the article directly inside the site. The project also includes SEO optimization and Open Graph configuration to ensure correct previews when sharing the website on social media and messaging platforms. Built with React and Vite, the site is fully responsive and optimized for fast loading and smooth performance across devices.",
+    "tools": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS",
+      "Cloudinary",
+      "YouTube embeds",
+      "Spotify embeds",
+      "Yumpu embed (interactive press publication)",
+      "SEO optimization",
+      "Open Graph configuration",
+      "Hostinger"
+    ],
+    "highlights": [
+      "Official website for a music and performing artist",
+      "Visual design inspired by theatrical and stage aesthetics",
+      "Parallax image effects for a more immersive visual experience",
+      "Scroll-triggered animations across multiple sections",
+      "Integration of music videos via YouTube embeds",
+      "Spotify music integration",
+      "Live performance video integrated directly into the page",
+      "Press section featuring an interactive Yumpu publication",
+      "SEO optimization and Open Graph configuration for social sharing",
+      "Fully responsive design optimized for mobile devices",
+      "Deployment and hosting on Hostinger"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1773487759/Portfolio/flor-albarracin_wnjknd.png",
+    "link": "https://soyfloralbarracin.com/",
+    "repo": "https://github.com/dianaSauval/Flor-Albarracin"
+  },
+  {
     "title": "Marisa Rodríguez | Holistic Therapies",
     "description": "Full-stack platform for holistic courses with cart, integrated payments and user management.",
     "longDescription": "Full-stack web application developed for Marisa Rodríguez’s personal brand, designed as a platform to sell and manage holistic courses. It includes a catalog of recorded courses and live classes, a shopping cart, and checkout with integrated payments via PayPal and Mercado Pago. The app implements user authentication with role-based access (admin and user) and protected routes on both frontend and backend, ensuring secure access to private areas. It also features an admin panel to manage courses, classes, content and visibility. The system follows a decoupled frontend-backend architecture via a REST API.",

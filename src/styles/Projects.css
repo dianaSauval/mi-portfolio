@@ -26,12 +26,12 @@
 /* Grid */
 .projects-grid {
   margin-top: var(--space-lg);
-  display: grid;
-  gap: 26px;
-  grid-template-columns: repeat(3, minmax(0, 340px));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 26px;
   width: 100%;
-  max-width: calc(340px * 3 + 26px * 2);
+  max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -52,9 +52,14 @@
   flex-direction: column;
   gap: 10px;
 
-  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+  flex: 0 0 340px;
+  max-width: 340px;
+
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 700ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-radius 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease,
+    border-radius 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms ease,
     opacity 700ms ease;
 }
 
@@ -65,10 +70,7 @@
 }
 
 /* Última card sola centrada (PERO no si está expandida) */
-.projects-grid
-  > .project-card:not(.is-expanded):nth-last-child(1):nth-child(3n + 1) {
-  grid-column: 2;
-}
+
 
 /* =========================
    “Focus mode” cuando hay expandida
@@ -84,11 +86,10 @@
    Inline expand (desktop/tablet horizontal)
 ========================= */
 .project-card.is-expanded {
-  grid-column: 1 / -1;
-  justify-self: center;
-
+  flex: 1 1 100%;
   width: min(1120px, 100%);
   max-width: 1120px;
+  justify-self: center;
 
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -114,15 +115,18 @@
   opacity: 0;
   transform: scale(0.985);
 
-  transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
     transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .project-card.is-expanded::before {
   opacity: 1;
   transform: scale(1);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12),
-    0 0 28px rgba(255, 106, 0, 0.16), 0 0 60px rgba(255, 106, 0, 0.1);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 28px rgba(255, 106, 0, 0.16),
+    0 0 60px rgba(255, 106, 0, 0.1);
 }
 
 /* Para FLIP: preparamos transform */
@@ -138,7 +142,8 @@
   object-fit: cover;
   border-radius: 12px;
 
-  transition: height 900ms cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    height 900ms cubic-bezier(0.22, 1, 0.36, 1),
     border-radius 900ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -207,7 +212,8 @@
   color: rgba(255, 255, 255, 0.92);
   cursor: pointer;
 
-  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 600ms cubic-bezier(0.22, 1, 0.36, 1),
     background 600ms cubic-bezier(0.22, 1, 0.36, 1),
     border-color 600ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -250,7 +256,8 @@
   color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
 
-  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
     background 600ms cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -274,7 +281,8 @@
   max-height: 200px;
   overflow: hidden;
 
-  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
     transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
     max-height 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -300,7 +308,8 @@
   opacity: 0;
   transform: translateY(-10px);
 
-  transition: max-height 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    max-height 1100ms cubic-bezier(0.22, 1, 0.36, 1),
     opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
     transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -323,7 +332,8 @@
   transform: translateY(-4px);
   line-height: 1.65;
 
-  transition: opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
     transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
 
   will-change: opacity, transform;
@@ -344,7 +354,8 @@
   opacity: 0;
   transform: translateY(-8px);
 
-  transition: max-height 900ms cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    max-height 900ms cubic-bezier(0.22, 1, 0.36, 1),
     opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
     transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -428,9 +439,13 @@
   }
 
   .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 340px));
-    max-width: calc(340px * 2 + 26px);
     gap: 20px;
+    max-width: 760px;
+  }
+
+  .project-card {
+    flex: 0 0 340px;
+    max-width: 340px;
   }
 
   .project-image {
@@ -438,10 +453,10 @@
   }
 
   .project-card.is-expanded {
-    grid-column: 1 / -1;
-    grid-template-columns: 1.1fr 0.9fr;
+    flex: 1 1 100%;
     width: min(980px, 100%);
     max-width: 980px;
+    grid-template-columns: 1.1fr 0.9fr;
   }
 
   .project-image.is-expanded {
@@ -462,19 +477,14 @@
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
     max-width: 520px;
     width: 100%;
     gap: 18px;
   }
 
-  /* Anula la regla de “última card centrada” en mobile */
-  .projects-grid
-    > .project-card:not(.is-expanded):nth-last-child(1):nth-child(3n + 1) {
-    grid-column: auto;
-  }
-
   .project-card {
+    flex: 1 1 100%;
+    max-width: 520px;
     width: 100%;
     text-align: center;
     align-items: center;
