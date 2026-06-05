@@ -51,7 +51,7 @@ export default function Contact() {
       { key: "collaboration", label: t("contact.reasons.collaboration") },
       { key: "other", label: t("contact.reasons.other") },
     ],
-    [t]
+    [t],
   );
 
   // Estado del form
@@ -65,8 +65,9 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
 
   const canSend = useMemo(
-    () => Boolean(EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY),
-    []
+    () =>
+      Boolean(EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY),
+    [],
   );
 
   // ✅ Si cambia el idioma, actualizamos el reason al equivalente traducido
@@ -147,7 +148,7 @@ export default function Contact() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         templateParams,
-        EMAILJS_PUBLIC_KEY
+        EMAILJS_PUBLIC_KEY,
       );
 
       setSent(true);
@@ -200,6 +201,14 @@ export default function Contact() {
       </Helmet>
 
       <section className="contact-page">
+        <div className="contact-ambient" aria-hidden="true">
+          <span className="contact-orbit contact-orbit-one" />
+          <span className="contact-orbit contact-orbit-two" />
+          <span className="contact-glow contact-glow-one" />
+          <span className="contact-glow contact-glow-two" />
+          <span className="contact-spark contact-spark-a" />
+          <span className="contact-spark contact-spark-b" />
+        </div>
         <header className="contact-hero">
           <h1 className="contact-title">{t("contact.title")}</h1>
           <p className="contact-subtitle">{t("contact.subtitle")}</p>
@@ -212,8 +221,12 @@ export default function Contact() {
 
             <div className="contact-info">
               <div className="info-row">
-                <span className="info-label">{t("contact.responseTimeLabel")}</span>
-                <span className="info-text">{t("contact.responseTimeText")}</span>
+                <span className="info-label">
+                  {t("contact.responseTimeLabel")}
+                </span>
+                <span className="info-text">
+                  {t("contact.responseTimeText")}
+                </span>
               </div>
 
               <div className="info-row">
@@ -285,7 +298,9 @@ export default function Contact() {
                       value={form.name}
                       onChange={onChange}
                     />
-                    {errors.name && <p className="field-error">{errors.name}</p>}
+                    {errors.name && (
+                      <p className="field-error">{errors.name}</p>
+                    )}
                   </div>
 
                   <div className="field">
@@ -298,7 +313,9 @@ export default function Contact() {
                       value={form.email}
                       onChange={onChange}
                     />
-                    {errors.email && <p className="field-error">{errors.email}</p>}
+                    {errors.email && (
+                      <p className="field-error">{errors.email}</p>
+                    )}
                   </div>
 
                   {/* ✅ Custom Select */}
@@ -312,7 +329,9 @@ export default function Contact() {
                       onChange={setReason}
                     />
 
-                    {errors.reason && <p className="field-error">{errors.reason}</p>}
+                    {errors.reason && (
+                      <p className="field-error">{errors.reason}</p>
+                    )}
                   </div>
 
                   <div className="field">
@@ -324,14 +343,20 @@ export default function Contact() {
                       value={form.message}
                       onChange={onChange}
                     />
-                    {errors.message && <p className="field-error">{errors.message}</p>}
+                    {errors.message && (
+                      <p className="field-error">{errors.message}</p>
+                    )}
                   </div>
 
                   {errors.general && (
                     <div className="form-status error">{errors.general}</div>
                   )}
 
-                  <button className="btn-send" type="submit" disabled={isSending}>
+                  <button
+                    className="btn-send"
+                    type="submit"
+                    disabled={isSending}
+                  >
                     {isSending ? t("contact.sending") : t("contact.send")}
                   </button>
 
@@ -352,7 +377,11 @@ export default function Contact() {
                     {t("contact.backHome")}
                   </button>
 
-                  <button className="btn-send" type="button" onClick={sendAnother}>
+                  <button
+                    className="btn-send"
+                    type="button"
+                    onClick={sendAnother}
+                  >
                     {t("contact.sendAnother")}
                   </button>
                 </div>
@@ -387,7 +416,8 @@ function CustomSelect({ id, value, options, onChange }) {
         aria-expanded={open}
         onClick={() => setOpen((s) => !s)}
         onBlur={(e) => {
-          if (!e.currentTarget.parentElement.contains(e.relatedTarget)) setOpen(false);
+          if (!e.currentTarget.parentElement.contains(e.relatedTarget))
+            setOpen(false);
         }}
       >
         <span className="cselect-value">{value}</span>

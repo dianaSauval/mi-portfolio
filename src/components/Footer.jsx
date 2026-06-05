@@ -5,27 +5,39 @@ export default function Footer() {
 
   return (
     <footer className="footer" role="contentinfo">
-      <div className="footer-row">
-        <span className="footer-brand">
-          © {year} · <strong>Diana Sauval</strong>
-        </span>
+      <div className="footer-glow" />
 
-        <span className="footer-dot" aria-hidden="true">•</span>
+      <div className="footer-content">
+        <div className="footer-brand">
+          <span className="footer-kicker">Portfolio digital</span>
+          <strong>Diana Sauval</strong>
+          <span className="footer-year">© {year}</span>
+        </div>
 
-        <span className="footer-made">
-          Web development & UI design
-        </span>
-
-        <span className="footer-dot" aria-hidden="true">•</span>
+        <p className="footer-made">
+          Web development · UI design · Creative digital experiences
+        </p>
 
         <nav className="footer-links" aria-label="Enlaces del pie">
-          <a className="footer-link" href="mailto:dianasauval@hotmail.com">Email</a>
-          <span className="footer-sep" aria-hidden="true">/</span>
-          <a className="footer-link" href="https://github.com/dianaSauval" target="_blank" rel="noreferrer">
+          <a className="footer-link" href="mailto:dianasauval@hotmail.com">
+            Email
+          </a>
+
+          <a
+            className="footer-link"
+            href="https://github.com/dianaSauval"
+            target="_blank"
+            rel="noreferrer"
+          >
             GitHub
           </a>
-          <span className="footer-sep" aria-hidden="true">/</span>
-          <a className="footer-link" href="https://www.linkedin.com/in/diana-sauval" target="_blank" rel="noreferrer">
+
+          <a
+            className="footer-link"
+            href="https://www.linkedin.com/in/diana-sauval"
+            target="_blank"
+            rel="noreferrer"
+          >
             LinkedIn
           </a>
         </nav>

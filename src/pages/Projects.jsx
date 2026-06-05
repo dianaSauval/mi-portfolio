@@ -66,7 +66,7 @@ function Projects() {
         duration: opts.duration ?? 820,
         easing: opts.easing ?? "cubic-bezier(0.22, 1, 0.36, 1)",
         fill: "both",
-      }
+      },
     );
   };
 
@@ -185,6 +185,12 @@ function Projects() {
       </Helmet>
 
       <div className="projects-container">
+        <div className="projects-ambient" aria-hidden="true">
+          <span className="projects-orbit orbit-one" />
+          <span className="projects-orbit orbit-two" />
+          <span className="projects-glow glow-one" />
+          <span className="projects-glow glow-two" />
+        </div>
         <h1 className="fade-in-title-projects">{t("projects.title")}</h1>
 
         <div className={`projects-grid ${hasExpanded ? "has-expanded" : ""}`}>
@@ -199,8 +205,7 @@ function Projects() {
 
             const repoFront =
               project.repoFrontend || project.frontendRepo || null;
-            const repoBack =
-              project.repoBackend || project.backendRepo || null;
+            const repoBack = project.repoBackend || project.backendRepo || null;
             const repoSingle = project.repo || null;
 
             return (
@@ -340,7 +345,9 @@ function Projects() {
                       {isExpanded ? "⤡" : "⤢"}
                     </span>
                     <span className="expand-text">
-                      {isExpanded ? t("projects.collapse") : t("projects.expand")}
+                      {isExpanded
+                        ? t("projects.collapse")
+                        : t("projects.expand")}
                     </span>
                   </button>
                 </div>

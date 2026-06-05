@@ -1,6 +1,6 @@
 [
   {
-    "title": "CircusCoach (MyCircusCoach)",
+    "title": "CircusCoach",
     "description": "Full-stack e-learning platform for circus courses and programs, with gated content and online payments.",
     "longDescription": "CircusCoach is a full-stack web platform focused on selling and delivering circus courses and training programs for an international audience, with multilingual support (Spanish, English and French). The project was developed based on the client’s visual and UX guidelines, while the overall architecture, frontend and backend development, business logic, security and third-party integrations were fully designed and implemented by me. Users gain access to exclusive content after purchase, including private Vimeo videos and PDF documents managed in Cloudinary, accessible only inside the platform. The system separates free vs paid content, includes user management, access control, an admin panel, and a decoupled REST API architecture deployed to production.",
     "tools": [

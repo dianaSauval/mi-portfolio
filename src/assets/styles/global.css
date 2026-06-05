@@ -1,15 +1,61 @@
 @import "./variables.css";
 
-html, body {
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
   font-family: var(--font-body);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
+  color: var(--color-text);
+  background: var(--gradient-bg);
 }
 
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  letter-spacing: 0.2px;
+body {
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(126, 29, 195, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(217, 177, 95, 0.10), transparent 25%),
+    radial-gradient(circle at 50% 90%, rgba(116, 18, 41, 0.25), transparent 35%);
+  filter: blur(2px);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+h1,
+h2,
+h3 {
   margin: 0;
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  letter-spacing: -0.03em;
 }
 
 h1 {
@@ -21,13 +67,87 @@ h1 {
 h2 {
   font-size: var(--fs-h2);
   font-weight: var(--fw-h2);
+  line-height: var(--lh-h2);
 }
 
-p, li, span {
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+}
+
+p,
+li,
+span {
   font-family: var(--font-body);
   font-weight: var(--fw-body);
 }
 
-button, .cta-button, a.button-like, input, select, textarea {
+p {
+  margin: 0;
+  color: var(--color-text-soft);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+.cta-button,
+a.button-like,
+input,
+select,
+textarea {
   font-family: var(--font-ui);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-bg);
+}
+
+/* Reutilizables */
+.section {
+  position: relative;
+  padding: var(--space-section) var(--space-md);
+}
+
+.container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.text-gradient {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass-card {
+  background: rgba(18, 11, 24, 0.72);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.gold-border {
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-gold);
+}
+
+.violet-glow {
+  box-shadow: var(--shadow-violet);
 }

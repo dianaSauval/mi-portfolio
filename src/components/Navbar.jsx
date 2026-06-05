@@ -1,23 +1,28 @@
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+
 import flagEs from "../assets/icons/flags/flag-es.svg";
 import flagEn from "../assets/icons/flags/flag-en.svg";
+
 import "../styles/Navbar.css";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
   const [langOpen, setLangOpen] = useState(false);
+
   const langRef = useRef(null);
 
   const { t, i18n } = useTranslation();
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -26,7 +31,9 @@ function Navbar() {
       if (!langRef.current) return;
       if (!langRef.current.contains(e.target)) setLangOpen(false);
     };
+
     document.addEventListener("mousedown", onClickOutside);
+
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
@@ -45,27 +52,38 @@ function Navbar() {
 
   const scrollTopSmooth = () => {
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    window.scrollTo({ top: 0, left: 0, behavior: reduce ? "auto" : "smooth" });
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: reduce ? "auto" : "smooth",
+    });
   };
 
   const handleNavClick = (to) => {
-    // cerrar menús siempre
     setOpen(false);
     setLangOpen(false);
 
-    // si ya estás en esa ruta, subí arriba suave
     if (location.pathname === to && window.scrollY > 0) {
       scrollTopSmooth();
     }
   };
 
+  const navItems = [
+    { to: "/", label: t("nav.home") },
+    { to: "/about", label: t("nav.about") },
+    { to: "/projects", label: t("nav.projects") },
+    { to: "/contact", label: t("nav.contact") },
+  ];
+
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""} ${open ? "open" : ""}`}>
       <div className="navbar-container">
-        <div className="logo">
-          <Link to="/" onClick={() => handleNavClick("/")}>
-            Diana Sauval
-          </Link>
+        <div className="navbar-brand">
+          <NavLink to="/" onClick={() => handleNavClick("/")}>
+            <span className="brand-name">Diana Sauval</span>
+            
+          </NavLink>
         </div>
 
         <button
@@ -77,37 +95,25 @@ function Navbar() {
             setLangOpen(false);
           }}
         >
-          <svg className="hamburger-icon" width="28" height="28" viewBox="0 0 100 100">
-            <path className="line line1" d="M 20,30 H 80" />
-            <path className="line line2" d="M 20,50 H 80" />
-            <path className="line line3" d="M 20,70 H 80" />
+          <svg className="hamburger-icon" width="30" height="30" viewBox="0 0 100 100">
+            <path className="line line1" d="M 22,32 H 78" />
+            <path className="line line2" d="M 22,50 H 78" />
+            <path className="line line3" d="M 22,68 H 78" />
           </svg>
         </button>
 
         <ul className="nav-links">
-          <li>
-            <Link to="/" onClick={() => handleNavClick("/")}>
-              {t("nav.home")}
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/about" onClick={() => handleNavClick("/about")}>
-              {t("nav.about")}
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/projects" onClick={() => handleNavClick("/projects")}>
-              {t("nav.projects")}
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/contact" onClick={() => handleNavClick("/contact")}>
-              {t("nav.contact")}
-            </Link>
-          </li>
+          {navItems.map((item) => (
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                onClick={() => handleNavClick(item.to)}
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
 
           <li className="nav-lang" ref={langRef}>
             <button

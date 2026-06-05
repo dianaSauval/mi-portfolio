@@ -1,50 +1,121 @@
 :root {
-  --header-h: 60px;
+  --header-h: 72px;
 
   /* =========================
-     Tipografías (1 sola decisión acá)
+     Tipografías
   ========================= */
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Poppins", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Cormorant Garamond", "Playfair Display", serif;
+  --font-ui: "Inter", system-ui, sans-serif;
 
-  /* Roles tipográficos */
   --font-body: var(--font-sans);
   --font-heading: var(--font-display);
-  --font-ui: var(--font-sans); /* botones, nav, chips */
+
+  /* =========================
+     Colores base
+  ========================= */
+  --color-bg: #050306;
+  --color-bg-soft: #0c0710;
+  --color-surface: #120b18;
+  --color-surface-light: #1d1026;
+
+  --color-violet: #7e1dc3;
+  --color-violet-soft: #a855f7;
+  --color-bordeaux: #741229;
+  --color-bordeaux-dark: #3a0714;
+
+  --color-gold: #d9b15f;
+  --color-gold-light: #f4d58d;
+  --color-gold-dark: #9b6a1d;
+
+  --color-text: #f8f1e7;
+  --color-text-soft: #d9cbb8;
+  --color-muted: #9f8fa8;
+
+  --color-border: rgba(217, 177, 95, 0.22);
+  --color-border-violet: rgba(168, 85, 247, 0.28);
+
+  /* =========================
+     Gradientes
+  ========================= */
+  --gradient-main: linear-gradient(
+    135deg,
+    var(--color-violet),
+    var(--color-bordeaux),
+    var(--color-gold)
+  );
+
+  --gradient-gold: linear-gradient(
+    135deg,
+    #f4d58d,
+    #d9b15f,
+    #9b6a1d
+  );
+
+  --gradient-bg: radial-gradient(
+      circle at top left,
+      rgba(126, 29, 195, 0.28),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(116, 18, 41, 0.32),
+      transparent 38%
+    ),
+    #050306;
 
   /* =========================
      Tamaños
   ========================= */
-  --fs-h1: clamp(2.8rem, 4vw, 3.6rem);
-  --fs-h2: clamp(1.15rem, 1.6vw, 1.35rem);
-  --fs-h3: 1.3rem;
-  --fs-body: 1.05rem;
-  --fs-button: 0.95rem;
-  --fs-chip: 0.92rem;
-  --fs-card-title: 1.25rem;
-  --fs-small: 0.95rem;
+  --fs-h1: clamp(3rem, 7vw, 6.8rem);
+  --fs-h2: clamp(2.2rem, 4vw, 4rem);
+  --fs-h3: clamp(1.35rem, 2vw, 1.8rem);
 
-  /* Pesos */
+  --fs-body: 1.05rem;
+  --fs-small: 0.92rem;
+  --fs-button: 0.95rem;
+  --fs-chip: 0.82rem;
+  --fs-card-title: 1.35rem;
+
+  /* =========================
+     Pesos y alturas
+  ========================= */
   --fw-h1: 700;
   --fw-h2: 700;
-  --fw-h3: 500;
+  --fw-h3: 600;
   --fw-body: 400;
-  --fw-button: 600;
+  --fw-button: 700;
 
-  /* Espaciados */
-  --lh-h1: 1.1;
-  --lh-body: 1.7;
+  --lh-h1: 0.95;
+  --lh-h2: 1.05;
+  --lh-body: 1.75;
 
+  /* =========================
+     Espaciados
+  ========================= */
   --space-xs: 8px;
   --space-sm: 16px;
-  --space-md: 20px;
-  --space-lg: 40px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+  --space-section: clamp(80px, 10vw, 140px);
 
-  /* Bordes */
-  --radius-img: 14px;
-  --radius-btn: 50px;
+  /* =========================
+     Bordes y sombras
+  ========================= */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-img: 24px;
+  --radius-btn: 999px;
 
-  /* Transiciones */
-  --transition-fast: 0.3s ease;
-  --transition-smooth: 0.6s ease;
+  --shadow-soft: 0 20px 80px rgba(0, 0, 0, 0.35);
+  --shadow-violet: 0 0 45px rgba(126, 29, 195, 0.35);
+  --shadow-gold: 0 0 35px rgba(217, 177, 95, 0.22);
+
+  /* =========================
+     Transiciones
+  ========================= */
+  --transition-fast: 0.25s ease;
+  --transition-smooth: 0.55s ease;
 }
