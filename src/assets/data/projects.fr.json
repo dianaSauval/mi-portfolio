@@ -1,0 +1,150 @@
+[
+  {
+    "title": "CircusCoach",
+    "description": "Plateforme e-learning full-stack dédiée aux cours et programmes de cirque, avec contenu sécurisé et paiements en ligne.",
+    "longDescription": "CircusCoach est une plateforme web full-stack conçue pour la vente et la diffusion de cours et de programmes de formation en arts du cirque destinés à un public international, avec une prise en charge multilingue (espagnol, anglais et français). Le projet a été développé selon les directives visuelles et UX du client, tandis que l’architecture globale, le développement frontend et backend, la logique métier, la sécurité ainsi que les intégrations de services tiers ont été entièrement conçus et réalisés par mes soins. Après leur achat, les utilisateurs accèdent à un contenu exclusif comprenant des vidéos privées hébergées sur Vimeo et des documents PDF stockés sur Cloudinary, consultables uniquement depuis la plateforme. Le système distingue clairement le contenu gratuit du contenu payant, intègre la gestion des utilisateurs, le contrôle des accès, un panneau d’administration ainsi qu’une architecture REST API découplée déployée en production.",
+    "tools": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Stripe",
+      "Vimeo (vidéos publiques et privées)",
+      "Cloudinary (PDF et images)",
+      "Multilingue (ES / EN / FR)",
+      "Hostinger"
+    ],
+    "highlights": [
+      "Plateforme e-learning avec contenu accessible après achat",
+      "Support multilingue (espagnol, anglais et français)",
+      "Contrôle d’accès pour les vidéos privées Vimeo et les PDF privés Cloudinary",
+      "Séparation claire entre contenu gratuit et contenu payant",
+      "Intégration des paiements en ligne avec Stripe",
+      "Panneau d’administration pour gérer les programmes et les contenus",
+      "Déploiement en production sur Hostinger"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805726/Portfolio/mycircuscoach_f5xyny.png",
+    "link": "https://mycircuscoach.com/",
+    "repoFrontend": "https://github.com/dianaSauval/CircusCoach-Frontend",
+    "repoBackend": "https://github.com/dianaSauval/CircusCoach-backend"
+  },
+  {
+    "title": "Flor Albarracín | Site officiel",
+    "description": "Site officiel de l’autrice-compositrice-interprète, actrice et multi-instrumentiste Flor Albarracín, avec une esthétique théâtrale et une expérience visuelle immersive.",
+    "longDescription": "Site officiel développé pour l’autrice-compositrice-interprète, actrice et multi-instrumentiste Flor Albarracín. Le projet a été conçu comme une plateforme artistique et un outil de présentation professionnelle destiné aux producteurs, festivals et au grand public. Le site associe une esthétique théâtrale élégante à une expérience visuelle dynamique grâce à des effets de parallaxe et des animations déclenchées au défilement, créant une narration immersive au fil de la navigation. Il comprend des sections consacrées à la biographie, à la musique, aux vidéos live, à la presse et au contact. Les clips musicaux sont intégrés via YouTube et Spotify, tandis que la vidéo de spectacle est directement intégrée dans la page. La section presse propose une publication interactive intégrée depuis Yumpu, permettant aux visiteurs de consulter l’article sans quitter le site. Le projet inclut également une optimisation SEO et une configuration Open Graph afin d’assurer un affichage correct lors du partage sur les réseaux sociaux et les plateformes de messagerie. Développé avec React et Vite, le site est entièrement responsive et optimisé pour offrir des temps de chargement rapides ainsi qu’une expérience fluide sur tous les appareils.",
+    "tools": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS",
+      "Cloudinary",
+      "Intégrations YouTube",
+      "Intégrations Spotify",
+      "Intégration Yumpu (publication de presse interactive)",
+      "Optimisation SEO",
+      "Configuration Open Graph",
+      "Hostinger"
+    ],
+    "highlights": [
+      "Site officiel pour une artiste de la musique et des arts de la scène",
+      "Design inspiré de l’univers théâtral et de la scène",
+      "Effets de parallaxe pour une expérience visuelle immersive",
+      "Animations déclenchées au défilement sur plusieurs sections",
+      "Intégration des clips musicaux via YouTube",
+      "Intégration de Spotify",
+      "Vidéo de spectacle intégrée directement dans la page",
+      "Section presse avec publication interactive Yumpu",
+      "Optimisation SEO et configuration Open Graph pour le partage sur les réseaux sociaux",
+      "Design entièrement responsive optimisé pour les appareils mobiles",
+      "Déploiement et hébergement sur Hostinger"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1773487759/Portfolio/flor-albarracin_wnjknd.png",
+    "link": "https://soyfloralbarracin.com/",
+    "repo": "https://github.com/dianaSauval/Flor-Albarracin"
+  },
+  {
+    "title": "Marisa Rodríguez | Thérapies Holistiques",
+    "description": "Plateforme full-stack dédiée aux formations holistiques avec panier, paiements intégrés et gestion des utilisateurs.",
+    "longDescription": "Application web full-stack développée pour la marque personnelle de Marisa Rodríguez, conçue comme une plateforme de vente et de gestion de formations holistiques. Elle comprend un catalogue de cours enregistrés et de classes en direct, un panier d’achat ainsi qu’un processus de paiement intégré via PayPal et Mercado Pago. L’application met en œuvre un système d’authentification avec gestion des rôles (administrateur et utilisateur) et des routes protégées côté frontend et backend, garantissant un accès sécurisé aux espaces privés. Elle dispose également d’un panneau d’administration permettant de gérer les cours, les classes, les contenus et leur visibilité. Le système repose sur une architecture découplée frontend-backend communiquant via une API REST.",
+    "tools": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "PayPal",
+      "Mercado Pago",
+      "Cloudinary",
+      "Hostinger"
+    ],
+    "highlights": [
+      "Système d’authentification avec gestion des rôles (administrateur et utilisateur)",
+      "Routes protégées côté frontend et backend",
+      "Catalogue de cours et de classes en direct avec parcours d’achat complet",
+      "Panier et paiement intégrés avec PayPal et Mercado Pago",
+      "Panneau d’administration pour gérer les cours, les classes et les contenus",
+      "Architecture frontend-backend découplée via une API REST",
+      "Déploiement et hébergement sur Hostinger"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805654/Portfolio/marisa-terapias-holisticas_a96f9k.png",
+    "link": "https://marisarodriguezterapiasholisticas.com/",
+    "repoFrontend": "https://github.com/dianaSauval/Marisa-Rodriguez-Frontend",
+    "repoBackend": "https://github.com/dianaSauval/Marisa-Rodriguez---Backend"
+  },
+  {
+    "title": "Dúo Serendipia",
+    "description": "Site officiel de Dúo Serendipia, un projet d’acrobatie et de danse contemporaine destiné aux scènes et événements internationaux.",
+    "longDescription": "Site web artistique et professionnel conçu pour présenter Dúo Serendipia aux producteurs, festivals et clients internationaux. Il associe une esthétique sensible et élégante à une structure claire mettant rapidement en valeur les numéros, l’expérience et les contenus audiovisuels du duo. Le site est disponible en espagnol et en anglais, entièrement responsive, et a été pensé comme un véritable outil de promotion et de vente : navigation intuitive, approche mobile-first et temps de chargement optimisés pour un partage facile via WhatsApp, e-mail ou dans le cadre de candidatures et auditions en ligne.",
+    "tools": [
+      "React",
+      "TypeScript",
+      "CSS",
+      "Cloudinary",
+      "Intégrations YouTube",
+      "Multilingue (ES / EN)",
+      "LatinCloud"
+    ],
+    "highlights": [
+      "Storytelling visuel conçu pour capter l’attention d’un producteur en moins de 30 secondes",
+      "Versions en espagnol et en anglais pour une diffusion internationale",
+      "Design élégant et minimaliste en accord avec l’identité artistique du duo",
+      "Expérience mobile-first optimisée pour le partage sur les réseaux sociaux et les applications de messagerie",
+      "Optimisation des images et des ressources grâce à Cloudinary",
+      "Déploiement et hébergement sur LatinCloud"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805527/Portfolio/duo-serendipia_yaabxx.png",
+    "link": "https://duoserendipia.com.ar",
+    "repo": "https://github.com/dianaSauval/PaginaSerendipia"
+  },
+  {
+    "title": "La Troupe Circo",
+    "description": "Site institutionnel de La Troupe Circo, une école de cirque située à Banfield, Buenos Aires.",
+    "longDescription": "Plateforme web institutionnelle développée pour La Troupe Circo, une école de cirque basée à Banfield, dans la province de Buenos Aires. Le site organise de manière claire les formations proposées, les disciplines enseignées et les moyens de contact, devenant ainsi le principal canal de communication entre l’école et sa communauté. Développé avec React et Create React App, il offre une expérience accessible et entièrement responsive, pensée en priorité pour les utilisateurs mobiles. Il comprend également un formulaire de contact fonctionnel avec envoi d’e-mails et protection anti-spam, le tout dans une esthétique conviviale et cohérente avec l’esprit communautaire du projet.",
+    "tools": [
+      "React",
+      "Create React App",
+      "CSS",
+      "Material UI",
+      "Cloudinary",
+      "EmailJS",
+      "Google reCAPTCHA",
+      "LatinCloud"
+    ],
+    "highlights": [
+      "Site institutionnel pour une école de cirque et sa communauté locale",
+      "Présentation claire des formations, disciplines et niveaux proposés",
+      "Formulaire de contact avec EmailJS et protection Google reCAPTCHA",
+      "Design responsive optimisé pour les demandes depuis mobile",
+      "Gestion et optimisation des images via Cloudinary",
+      "Déploiement et hébergement sur LatinCloud"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1765805373/Portfolio/la-troupe_ymekyb.png",
+    "link": "https://latroupecirco.com.ar",
+    "repo": "https://github.com/dianaSauval/La-Troupe"
+  }
+]

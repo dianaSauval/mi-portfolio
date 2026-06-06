@@ -5,27 +5,41 @@ import { useTranslation } from "react-i18next";
 
 import projectsES from "../assets/data/projects.es.json";
 import projectsEN from "../assets/data/projects.en.json";
+import projectsFR from "../assets/data/projects.fr.json";
 
 function Projects() {
   const { t, i18n } = useTranslation();
 
-  const lang = i18n.language?.startsWith("es") ? "es" : "en";
+  const lang = i18n.language?.startsWith("fr")
+    ? "fr"
+    : i18n.language?.startsWith("es")
+      ? "es"
+      : "en";
 
   const seoTitle = {
     es: "Proyectos · Diana Sauval",
     en: "Projects · Diana Sauval",
+    fr: "Projets · Diana Sauval",
   }[lang];
 
   const seoDescription = {
     es: "Proyectos web desarrollados por Diana Sauval: sitios y aplicaciones con React, Node y MongoDB. Mirá casos reales, stack y repos.",
     en: "Web projects by Diana Sauval: sites and apps built with React, Node and MongoDB. Real cases, stack and repos.",
+    fr: "Projets web développés par Diana Sauval : sites et applications réalisés avec React, Node et MongoDB. Découvrez des réalisations concrètes, les technologies utilisées et les dépôts GitHub.",
   }[lang];
 
   const canonicalUrl = "https://dianasauvaldigital.com.ar/projects";
 
   const projectsData = useMemo(() => {
-    const lng = i18n.language?.startsWith("es") ? "es" : "en";
-    return lng === "es" ? projectsES : projectsEN;
+    if (i18n.language?.startsWith("fr")) {
+      return projectsFR;
+    }
+
+    if (i18n.language?.startsWith("es")) {
+      return projectsES;
+    }
+
+    return projectsEN;
   }, [i18n.language]);
 
   const [expandedIndex, setExpandedIndex] = useState(null);

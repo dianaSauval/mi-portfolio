@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact",
+    "openMenu": "Ouvrir le menu",
+    "language": "Langue"
+  },
+  "lang": {
+    "es": "Espagnol",
+    "en": "Anglais",
+    "fr":"Français"
+  },
+  "home": {
+    "titleLine1": "Développeuse Full-Stack",
+    "titleLine2": "Plateformes Web",
+    "subtitle": "Plateformes web, projets concrets, approche humaine",
+    "text": "Je conçois et développe des plateformes web complètes, du frontend au backend, avec une attention particulière portée à la clarté, à la structure et à l'expérience utilisateur. J'interviens sur des projets intégrant des panneaux d'administration, des systèmes de gestion de contenu et des solutions de paiement, en accordant autant d'importance aux aspects techniques qu'aux besoins humains derrière chaque produit.",
+    "cta": "Voir les projets",
+    "imageAlt": "Diana Sauval"
+  },
+  "about": {
+    "title": "À propos",
+    "p1": "Je suis développeuse web Full-Stack et je crée des sites et des plateformes complètes pour des projets réels.",
+    "p2": "Je conçois et développe des produits numériques clairs, fonctionnels et faciles à utiliser, en accompagnant chaque client depuis l'idée initiale jusqu'à la mise en production.",
+    "p3": "Je m'attache à construire des solutions solides, bien structurées et évolutives, en prenant soin à la fois de leur fonctionnement interne et de l'expérience des utilisateurs.",
+    "techTitle": "Stack technique",
+    "tech1": "Je travaille sur l'ensemble du stack avec React et Vite pour le frontend, ainsi que Node.js, Express et MongoDB pour le backend.",
+    "tech2": "Je développe des panneaux d'administration, des systèmes d'authentification, des outils de gestion de contenu et des plateformes intégrant des paiements en ligne.",
+    "tech3": "J'intègre des services tels que Cloudinary et Vimeo pour la gestion des fichiers, ainsi que des solutions de paiement comme Mercado Pago, PayPal et Stripe.",
+    "tech4": "J'ai suivi le programme IBM Cybersecurity Analyst et obtenu ses certifications, ce qui me permet d'appliquer de bonnes pratiques de cybersécurité dans les projets que je développe.",
+    "chips": {
+      "payments": "Paiements",
+      "cybersecurity": "Cybersécurité"
+    },
+    "cta": "Parlons de votre projet"
+  },
+  "projects": {
+    "title": "Mes projets",
+    "viewProject": "Voir le projet",
+    "tools": "Technologies",
+    "highlights": "Réalisations",
+    "code": "Code",
+    "codeFrontend": "Code (Frontend)",
+    "codeBackend": "Code (Backend)",
+    "expand": "Afficher plus",
+    "collapse": "Afficher moins"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Remplissez le formulaire et vous recevrez une réponse par e-mail dans les meilleurs délais.",
+
+    "infoTitle": "Informations",
+    "responseTimeLabel": "Délai de réponse",
+    "responseTimeText": "Généralement sous 24 à 48 heures.",
+    "speedUpLabel": "Pour accélérer le traitement",
+    "speedUpText": "Indiquez votre objectif, votre échéance et toute information utile concernant votre projet.",
+    "socialLabel": "Réseaux",
+
+    "note": "Afin de mieux vous accompagner, décrivez l'objectif de votre site, les sections souhaitées, vos éventuelles références visuelles ainsi que le délai dans lequel vous aimeriez avancer.",
+
+    "formTitle": "Envoyer un message",
+
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "votreadresse@email.com",
+
+    "reasonLabel": "Objet",
+    "reasons": {
+      "webProject": "Projet web",
+      "budget": "Demande de devis",
+      "collaboration": "Collaboration",
+      "other": "Autre"
+    },
+
+    "messageLabel": "Message",
+    "messagePlaceholder": "Décrivez brièvement votre demande et les informations les plus importantes.",
+
+    "sending": "Envoi en cours...",
+    "send": "Envoyer le message",
+
+    "privacyHint": "Les informations fournies sont utilisées uniquement pour répondre à votre demande.",
+
+    "successTitle": "Message envoyé avec succès",
+    "successText": "Merci de votre message. Il a bien été envoyé et une réponse sera adressée à l'e-mail indiqué.",
+    "backHome": "Retour à l'accueil",
+    "sendAnother": "Envoyer un autre message",
+
+    "errors": {
+      "name": "Veuillez indiquer votre nom.",
+      "email": "Veuillez saisir une adresse e-mail valide.",
+      "reason": "Veuillez sélectionner un motif.",
+      "message": "Le message doit contenir au moins 10 caractères.",
+      "missingEmailjs": "EmailJS n'est pas configuré (vérifiez vos variables dans le fichier .env).",
+      "sendFailed": "Le message n'a pas pu être envoyé. Veuillez réessayer dans quelques minutes."
+    }
+  }
+}

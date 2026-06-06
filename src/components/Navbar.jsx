@@ -3,7 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import flagEs from "../assets/icons/flags/flag-es.svg";
-import flagEn from "../assets/icons/flags/flag-en.svg";
+import flagEn from "../assets/icons/flags/en.png";
+import flagFr from "../assets/icons/flags/flag-fr.svg";
 import logo from "../assets/img/logo-fondo-transparente.png";
 
 import "../styles/Navbar.css";
@@ -38,7 +39,28 @@ function Navbar() {
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
-  const currentLng = i18n.language?.startsWith("es") ? "es" : "en";
+  const getCurrentLng = () => {
+    if (i18n.language?.startsWith("fr")) return "fr";
+    if (i18n.language?.startsWith("es")) return "es";
+    return "en";
+  };
+
+  const currentLng = getCurrentLng();
+
+  const languages = {
+    es: {
+      label: t("lang.es"),
+      flag: flagEs,
+    },
+    en: {
+      label: t("lang.en"),
+      flag: flagEn,
+    },
+    fr: {
+      label: t("lang.fr"),
+      flag: flagFr,
+    },
+  };
 
   const setLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -47,13 +69,13 @@ function Navbar() {
     setOpen(false);
   };
 
-  const currentLabel = t(`lang.${currentLng}`);
-  const currentFlagSrc = currentLng === "es" ? flagEs : flagEn;
-  const currentFlagAlt = currentLng === "es" ? t("lang.es") : t("lang.en");
+  const currentLabel = languages[currentLng].label;
+  const currentFlagSrc = languages[currentLng].flag;
+  const currentFlagAlt = languages[currentLng].label;
 
   const scrollTopSmooth = () => {
     const reduce = window.matchMedia?.(
-      "(prefers-reduced-motion: reduce)",
+      "(prefers-reduced-motion: reduce)"
     )?.matches;
 
     window.scrollTo({
@@ -147,25 +169,24 @@ function Navbar() {
 
             {langOpen && (
               <div className="lang-menu" role="menu">
-                <button
-                  type="button"
-                  className={`lang-option ${currentLng === "es" ? "selected" : ""}`}
-                  onClick={() => setLanguage("es")}
-                  role="menuitem"
-                >
-                  <img src={flagEs} alt={t("lang.es")} className="lang-flag" />
-                  <span>{t("lang.es")}</span>
-                </button>
-
-                <button
-                  type="button"
-                  className={`lang-option ${currentLng === "en" ? "selected" : ""}`}
-                  onClick={() => setLanguage("en")}
-                  role="menuitem"
-                >
-                  <img src={flagEn} alt={t("lang.en")} className="lang-flag" />
-                  <span>{t("lang.en")}</span>
-                </button>
+                {Object.entries(languages).map(([lng, data]) => (
+                  <button
+                    key={lng}
+                    type="button"
+                    className={`lang-option ${
+                      currentLng === lng ? "selected" : ""
+                    }`}
+                    onClick={() => setLanguage(lng)}
+                    role="menuitem"
+                  >
+                    <img
+                      src={data.flag}
+                      alt={data.label}
+                      className="lang-flag"
+                    />
+                    <span>{data.label}</span>
+                  </button>
+                ))}
               </div>
             )}
           </li>
