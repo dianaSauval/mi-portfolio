@@ -62,10 +62,27 @@
 .navbar-brand a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-
+  gap: 10px;
   color: var(--color-text);
   text-decoration: none;
+}
+
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 14px rgba(217, 177, 95, 0.22));
+  transition:
+    transform var(--transition-fast),
+    filter var(--transition-fast);
+}
+
+.navbar-brand a:hover .brand-logo {
+  transform: translateY(-1px) scale(1.04);
+  filter:
+    drop-shadow(0 0 16px rgba(217, 177, 95, 0.35))
+    drop-shadow(0 0 20px rgba(126, 29, 195, 0.25));
 }
 
 .brand-name {
@@ -481,5 +498,16 @@
   .nav-toggle {
     width: 42px;
     height: 42px;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand-name {
+    font-size: 1.28rem;
   }
 }

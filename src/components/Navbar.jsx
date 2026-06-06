@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import flagEs from "../assets/icons/flags/flag-es.svg";
 import flagEn from "../assets/icons/flags/flag-en.svg";
+import logo from "../assets/img/logo-fondo-transparente.png";
 
 import "../styles/Navbar.css";
 
@@ -51,7 +52,9 @@ function Navbar() {
   const currentFlagAlt = currentLng === "es" ? t("lang.es") : t("lang.en");
 
   const scrollTopSmooth = () => {
-    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const reduce = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)",
+    )?.matches;
 
     window.scrollTo({
       top: 0,
@@ -77,12 +80,14 @@ function Navbar() {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""} ${open ? "open" : ""}`}>
+    <nav
+      className={`navbar ${scrolled ? "scrolled" : ""} ${open ? "open" : ""}`}
+    >
       <div className="navbar-container">
         <div className="navbar-brand">
           <NavLink to="/" onClick={() => handleNavClick("/")}>
+            <img src={logo} alt="Diana Sauval Digital" className="brand-logo" />
             <span className="brand-name">Diana Sauval</span>
-            
           </NavLink>
         </div>
 
@@ -95,7 +100,12 @@ function Navbar() {
             setLangOpen(false);
           }}
         >
-          <svg className="hamburger-icon" width="30" height="30" viewBox="0 0 100 100">
+          <svg
+            className="hamburger-icon"
+            width="30"
+            height="30"
+            viewBox="0 0 100 100"
+          >
             <path className="line line1" d="M 22,32 H 78" />
             <path className="line line2" d="M 22,50 H 78" />
             <path className="line line3" d="M 22,68 H 78" />
@@ -124,7 +134,11 @@ function Navbar() {
               aria-expanded={langOpen}
               aria-label={t("nav.language")}
             >
-              <img src={currentFlagSrc} alt={currentFlagAlt} className="lang-flag" />
+              <img
+                src={currentFlagSrc}
+                alt={currentFlagAlt}
+                className="lang-flag"
+              />
               <span className="lang-text">{currentLabel}</span>
               <span className="lang-caret" aria-hidden="true">
                 ▾
