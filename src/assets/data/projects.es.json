@@ -31,6 +31,41 @@
     "repoFrontend": "https://github.com/dianaSauval/CircusCoach-Frontend",
     "repoBackend": "https://github.com/dianaSauval/CircusCoach-backend"
   },
+
+  {
+    "title": "Blow Up Company",
+    "description": "Sitio web artístico inmersivo para una compañía internacional de circo contemporáneo y danza, con animaciones personalizadas y diseño visual dinámico.",
+    "longDescription": "Sitio web oficial desarrollado para Blow Up Company, una compañía de circo contemporáneo y danza con diferentes producciones escénicas. El proyecto fue concebido como una experiencia digital inmersiva que combina tres universos visuales diferenciados dentro de una misma identidad: The Clay Artists, Freaky Tango y Shows & Animations. Cada producción cuenta con una estética propia, composiciones editoriales, tipografía expresiva, fotografía de gran formato y animaciones personalizadas activadas durante la navegación. El desarrollo incluyó transiciones visuales entre secciones, elementos gráficos animados, integración de contenido audiovisual y adaptación responsive de composiciones complejas. Se prestó especial atención al rendimiento y a la experiencia en dispositivos móviles, optimizando los efectos visuales para garantizar una navegación fluida. Además, se implementaron configuraciones SEO, metadatos Open Graph y un sistema de despliegue automatizado mediante GitHub Actions, conectado a un servidor VPS en Hostinger con Nginx.",
+    "tools": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS",
+      "Responsive Design",
+      "Scroll Animations",
+      "YouTube embeds",
+      "SEO optimization",
+      "Open Graph configuration",
+      "GitHub Actions",
+      "Linux VPS",
+      "Nginx",
+      "Hostinger"
+    ],
+    "highlights": [
+      "Experiencia web inmersiva para una compañía internacional de circo contemporáneo y danza",
+      "Tres identidades visuales diferenciadas integradas en un mismo sitio",
+      "Diseño editorial con tipografía expresiva y fotografía de gran formato",
+      "Animaciones personalizadas y transiciones visuales entre producciones",
+      "Integración de contenido audiovisual, tráileres y referencias de prensa",
+      "Diseño responsive con adaptación de composiciones complejas a dispositivos móviles",
+      "Optimización de animaciones y recursos para una navegación fluida",
+      "Configuración SEO y metadatos Open Graph para redes sociales",
+      "Despliegue automatizado mediante GitHub Actions en VPS con Nginx"
+    ],
+    "image": "https://res.cloudinary.com/dkdhdy9e5/image/upload/v1792954138/Portfolio/blow-up_citonp.jpg",
+    "link": "https://blowupcompany.com",
+    "repo": "https://github.com/dianaSauval/Blow-Up"
+  },
   {
     "title": "Flor Albarracín | Sitio Oficial",
     "description": "Sitio web oficial de la cantautora, actriz y multiinstrumentista Flor Albarracín, con estética teatral y experiencia visual inmersiva.",
